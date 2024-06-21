@@ -1,22 +1,29 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compileOnSave": true,
   "compilerOptions": {
-    "emitDeclarationOnly": true,
-    "outDir": "dist/ts.d",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
     "incremental": true,
-    "sourceMap": true
-  },
-  "files": ["dev.ts", "./build.ts"],
-  "references": [
-    {
-      "path": "./tsconfig.dev.json"
-    },
-    {
-      "path": "./tests/tsconfig.test.json"
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@atoms": ["./src/ui/atoms"],
+      "@molecules": ["./src/ui/molecules"],
+      "@organisms": ["./src/ui/organisms"]
     }
-  ],
-
-  "$schema": "https://json.schemastore.org/tsconfig"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

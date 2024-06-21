@@ -1,83 +1,36 @@
-# React Bun App
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## whats inside:
+## Getting Started
 
-react boilerplate project using bun and typescript configured:
+First, run the development server:
 
-- dev server - refresh page on change
-- build (bun in few flavors)
-- tests
-- typescript with composite on
-- module css support included
-- formater configured
-- example code provided for all of above
-- vscode configured including automated  tasks
-- chrome debug configured for vscode
-
-Run the following commands to get started.
-
-```sh
-bun create https://github.com/mi4uu/bun-react-template ./react-bun-app
-cd react-bun-app
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-The `bun create` command will automatically install the required dependencies. To start the dev server:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```sh
-bun run dev
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Then open http://localhost:3000 with your browser to see the result.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-This bundles `src/index.tsx` and starts a development server that serves from the `public` build and serves app from src/ directory. When the incoming request to `localhost:3000/` comes in, the following exchange occurs:
+## Learn More
 
-- The Bun server returns `public/index.html`.
-- The browser renders this HTML, which contains a `script` tags with `src="/index.js"`. The browser requests this file.
-- The server checks for this file, first in `public` and returns it, if requested file is index.js, it uses src/index.tsx as entrypoint, build it in memory and serve. Program is watching files, if You make any change in application, it will rebuild and refresh page.
-- This file renders the React component in `src/App.tsx` inside the `div#root` element. The app is now ready to accept user input.
+To learn more about Next.js, take a look at the following resources:
 
-Start building your app by editing `src/App.tsx`.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### test
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-```sh
-bun run test
-```
+## Deploy on Vercel
 
-### build
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```sh
-bun run build
-```
-
-same as build:bun:prod
-
-```sh
-bun run build:bun:dev
-```
-
-build bundle without minification
-
-```sh
-bun run build:bun:prod
-```
-
-build production bundle
-
-```sh
-bun run build:ts
-```
-
-build using typescript --build, using bun to boost typescript execution
-
-```sh
-bun run build:all
-```
-
-run all builds - no idea why, but you can xD
-
-```sh
-bun run format
-```
-
-format sources using dprint
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
