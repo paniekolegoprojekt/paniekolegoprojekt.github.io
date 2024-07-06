@@ -10,6 +10,10 @@ const generateTypography = ({ addComponents, theme }) => {
       ["font-family"]: "Montserrat",
       ["font-size"]: `16px`,
     },
+    ".label": {
+      ["font-family"]: "Montserrat",
+      ["font-size"]: `18px`,
+    },
     ".label-l": {
       ["font-family"]: "Montserrat",
       ["font-size"]: `32px`,
@@ -29,6 +33,12 @@ const generateTypography = ({ addComponents, theme }) => {
       ["font-family"]: "Montserrat",
       ["font-weight"]: "700",
       ["font-size"]: "24px",
+    },
+
+    ".title": {
+      ["font-family"]: "Montserrat",
+      ["font-weight"]: "700",
+      ["font-size"]: "18px",
     },
 
     ".title-s": {

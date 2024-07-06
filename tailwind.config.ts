@@ -16,6 +16,7 @@ const config: Config = {
       animation: {
         fadeIn: "fadeIn 0.5s ease-out",
         slideIn: "slideIn 300ms ease-in-out",
+        hideOut: "hideOut 1.5s ease-in",
       },
       keyframes: {
         fadeIn: {
@@ -25,6 +26,11 @@ const config: Config = {
         slideIn: {
           "0%": { top: "150%" },
           "100%": { top: "50%" },
+        },
+        hideOut: {
+          "0%": { display: "inherit" },
+          "99%": { display: "inherit" },
+          "100%": { display: "none" },
         },
       },
       backgroundImage: {

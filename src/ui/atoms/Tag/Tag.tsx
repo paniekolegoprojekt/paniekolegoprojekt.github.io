@@ -1,10 +1,10 @@
 import React from "react";
 import { TagProps } from "./types";
 
-export const Tag = ({ text, className }: TagProps) => {
+export const Tag = ({ text, className, styles }: TagProps) => {
   return (
-    <span className={className}>
-      <p className="label-s uppercase">{text}</p>
+    <span className={className} style={styles}>
+      <p className="uppercase">{text}</p>
     </span>
   );
 };

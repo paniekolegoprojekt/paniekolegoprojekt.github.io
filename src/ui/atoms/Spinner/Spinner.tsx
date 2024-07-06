@@ -1,8 +1,6 @@
 import React from "react";
-import { Theme, Button, Spinner } from "@radix-ui/themes";
+import { Spinner as RadixSpinner } from "@radix-ui/themes";
 
-const Spinner = () => {
-  return <Spinner />;
+export const Spinner = () => {
+  return <RadixSpinner />;
 };
-
-export default Spinner;

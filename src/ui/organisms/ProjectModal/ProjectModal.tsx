@@ -14,7 +14,7 @@ export const ProjectModal = ({ project }: { project: ProjectProps }) => {
       className="absolute inset-0 bg-ui-dark bg-opacity-50 fade-in"
       href="/project/"
     >
-      <div className="bg-white p-8 grid rounded border solid border-ui-light-grey mx-auto my-8 w-1/2 animate-fadeIn">
+      <div className="bg-white p-8 grid rounded border solid border-ui-light-grey mx-auto xl:my-8 xl:w-1/2 w-full h-[500px] my-0 animate-fadeIn">
         <div className="mb-8 flex justify-between">
           <div>
             {project?.name && <Text text={project.name} className="title-m" />}
