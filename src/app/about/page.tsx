@@ -1,13 +1,12 @@
 import { Sidebar } from "@/ui/molecules";
 import Image from "next/image";
 import { Text } from "@atoms";
-import parse from "html-react-parser";
 
 export default function Layout() {
   return (
     <main className="grid grid-cols-12 bg-ui-polar gap-4">
       <Sidebar className="col-span-12 lg:col-span-2" />
-      <div className="lg:col-span-10 col-span-12 bg-ui-light-grey grid grid-cols-12 gap-4 border-l solid border-ui-grey h-[calc(90vh_-2rem)] overflow-auto min-h-screen">
+      <div className="lg:col-span-10 col-span-12 bg-ui-light-grey grid grid-cols-12 gap-4 border-l solid border-ui-grey h-[calc(90vh_-2rem)] overflow-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2  col-span-12 p-8">
           <div className="p-4 lg:p-8">
             <Text className="title-xl mb-4" text="O mnie" />

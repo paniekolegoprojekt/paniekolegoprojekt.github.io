@@ -1,5 +1,4 @@
-import { Category, ProjectProps } from "../ui/types";
-import { CategoryType } from "../utils/utils";
+import { Category, CategoryType, ProjectProps } from "../ui/types";
 
 export const categories: Record<Category, CategoryType> = {
   [Category.Branding]: {
@@ -222,8 +221,9 @@ export const projects: ProjectProps[] = [
       "/images/360/asset2.png",
       "/images/360/asset3.png",
     ],
-    description: `<p>aplikacja mobilna, casualowa gierka na android</p><p>napisana w całości w Pythonie, przez framework Kivy</p>,
-    <p>opublikowana w sklepie Google Play jako darmowa gierka w kwietniu 2016, dostępna do stycznia 2018</p>.
+    description: `<p>- aplikacja mobilna, casualowa gierka na android,</p><p>napisana w całości w Pythonie, przez framework Kivy,</p>
+    <p>- opublikowana w sklepie Google Play jako darmowa gierka w kwietniu 2016, dostępna do stycznia 2018</p>
+    <p>- Bardzo ważna dla mnie jako, że było to moje pierwsze autorskie oprogramowanie</p>
     `,
     tags: [Category.Software, Category.GraphicDesign],
     className: "bg-[#44464b]",

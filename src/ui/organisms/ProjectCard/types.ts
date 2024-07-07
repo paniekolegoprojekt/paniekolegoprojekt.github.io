@@ -1,6 +1,8 @@
+import { Dispatch, SetStateAction } from "react";
 import { ProjectProps } from "../../types";
 
-export type ProjectCardProps = ProjectProps & {
+export type ProjectCardProps = {
   isFilteredOut?: boolean;
-  cx?: string;
+  setActiveProject: Dispatch<SetStateAction<ProjectProps | undefined>>;
+  project?: ProjectProps;
 };

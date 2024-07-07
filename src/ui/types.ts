@@ -27,3 +27,9 @@ export type ProjectProps = {
   assets?: string[];
   className?: string;
 };
+
+export type CategoryType = {
+  name: string;
+  color: string;
+  category: Category;
+};

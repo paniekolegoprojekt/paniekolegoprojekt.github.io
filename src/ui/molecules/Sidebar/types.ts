@@ -1,5 +1,4 @@
 import { Category } from "@/ui/types";
-import { CategoryType } from "@/utils/utils";
 import { Dispatch, SetStateAction } from "react";
 
 export type SidebarProps = {

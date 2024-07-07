@@ -3,7 +3,6 @@ import React from "react";
 import ProjectList from "../ui/organisms/ProjectList/ProjectList";
 import { Sidebar } from "@molecules";
 import { projects } from "../const/const";
-import { CategoryType } from "@/utils/utils";
 import { Category } from "@/ui/types";
 
 export default function Layout() {
@@ -14,6 +13,7 @@ export default function Layout() {
         className="col-span-12 lg:col-span-2 sticky top-0"
         filterByCategory={filterByCategory}
         filteredCategories={filteredCategories}
+        showCategories={true}
       />
       <div className="lg:col-span-10 col-span-12 bg-ui-light-grey grid grid-cols-12 gap-4 border-l solid border-ui-grey">
         <ProjectList cards={projects} filteredCategories={filteredCategories} />

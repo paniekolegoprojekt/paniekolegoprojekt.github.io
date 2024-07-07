@@ -13,7 +13,7 @@ export const Sidebar = ({
   className,
   filterByCategory,
   filteredCategories,
-  showCategories,
+  showCategories = false,
 }: SidebarProps) => {
   const isActive = (category: Category) =>
     filteredCategories?.includes(category);
