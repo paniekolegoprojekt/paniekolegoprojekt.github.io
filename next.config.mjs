@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // <=== enables static exports
-  reactStrictMode: true,
+  output: "export",
+
+  basePath: "/paniekolegoprojekt.github.io",
+
+  images: {
+    unoptimized: true,
+  },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
