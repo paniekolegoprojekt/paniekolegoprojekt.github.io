@@ -223,7 +223,7 @@ export const projects: ProjectProps[] = [
     ],
     description: `<p>- aplikacja mobilna, casualowa gierka na android,</p><p>napisana w całości w Pythonie, przez framework Kivy,</p>
     <p>- opublikowana w sklepie Google Play jako darmowa gierka w kwietniu 2016, dostępna do stycznia 2018</p>
-    <p>- Bardzo ważna dla mnie jako, że było to moje pierwsze autorskie oprogramowanie</p>
+    <p>- bardzo ważna dla mnie jako, że było to moje pierwsze autorskie oprogramowanie</p>
     `,
     tags: [Category.Software, Category.GraphicDesign],
     className: "bg-[#44464b]",
