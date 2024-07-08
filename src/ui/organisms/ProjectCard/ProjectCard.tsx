@@ -1,4 +1,3 @@
-import React from "react";
 import { ProjectCardProps } from "./types";
 import { twMerge } from "tailwind-merge";
 

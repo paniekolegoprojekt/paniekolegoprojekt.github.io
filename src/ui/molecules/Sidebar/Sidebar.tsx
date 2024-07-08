@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { SidebarProps } from "./types";
 import { twMerge } from "tailwind-merge";
 import { Tag, Text } from "../../atoms";

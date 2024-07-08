@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CardListProps } from "./types";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { ProjectProps } from "../../../ui/types";

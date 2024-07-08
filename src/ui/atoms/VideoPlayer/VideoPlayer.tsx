@@ -1,5 +1,3 @@
-import React from "react";
-
 export const VideoPlayer = ({ src }: { src: string }) => {
   return (
     <iframe

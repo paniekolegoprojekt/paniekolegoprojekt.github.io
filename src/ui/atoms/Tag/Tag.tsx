@@ -1,4 +1,3 @@
-import React from "react";
 import { TagProps } from "./types";
 
 export const Tag = ({ text, className, styles }: TagProps) => {
