@@ -1,6 +1,6 @@
 {
   "name": "paniekolegoprojekt.github.io-vite",
-  "homepage": "https://{paniekolegoprojekt}.github.io/{repo-name}/",
+  "homepage": "https://paniekolegoprojekt.github.io/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
