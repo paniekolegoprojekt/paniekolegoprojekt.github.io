@@ -20,8 +20,8 @@ const config: Config = {
       },
       keyframes: {
         fadeIn: {
-          "0%": { backgroundOpacity: "0" },
-          "100%": { backgroundOpacity: "100" },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "100" },
         },
         slideIn: {
           "0%": { top: "150%" },

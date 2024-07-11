@@ -31,5 +31,5 @@ export type ProjectProps = {
 export type CategoryType = {
   name: string;
   color: string;
-  category: Category;
+  value: Category;
 };

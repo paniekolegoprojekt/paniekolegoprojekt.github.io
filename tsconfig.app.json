@@ -23,12 +23,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@atoms": ["./src/ui/atoms/*"],
-      "@molecules": ["./src/ui/molecules/*"],
-      "@organisms": ["./src/ui/organisms/*"],
-      "@pages": ["./src/pages/*"],
-      "@ui": ["./src/ui/*"],
-      "@src": ["./src/*"]
+      "@": ["./src"],
+      "@/*": ["./src/*"],
+      "atoms": ["./src/ui/atoms"],
+      "$ui/*": ["./src/ui/*"]
     }
   },
   "include": ["src"]

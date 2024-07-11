@@ -1,25 +1,19 @@
 import { SidebarProps } from "./types";
 import { twMerge } from "tailwind-merge";
-import { Tag, Text } from "../../atoms";
-import { NavLink } from "react-router-dom";
+import { Text } from "atoms";
 import { categories } from "../../../const";
-import { Category } from "../../types";
+import { NavigationLink } from "./blocks/NavigationLink/NavigationLink";
+import { sidebarCx } from "./const";
+import { CategoryTag } from "..";
+
 export const Sidebar = ({
   className,
   filterByCategory,
   filteredCategories,
   showCategories = false,
 }: SidebarProps) => {
-  const isActive = (category: Category) =>
-    filteredCategories?.includes(category);
-
   return (
-    <div
-      className={twMerge(
-        className,
-        "bg-white xxl:p-14 xl:p-8 md:p-8 p-4 min-h-unset lg:min-h-screen flex lg:grid justify-end lg:justify-normal items-center content-baseline max-h-28"
-      )}
-    >
+    <div className={twMerge(className, sidebarCx)}>
       <img
         src="shared/logo.svg"
         alt="logo"
@@ -27,47 +21,33 @@ export const Sidebar = ({
         height={200}
         className="h-16 lg:h-32 w-auto lg:mb-8 mr-auto"
       />
-      <div className="gap-4 lg:gap-3 lg:grid flex">
-        <NavLink className={(isActive) => isActive && "underline"} to="/">
-          <Text text="Projekty" className="title uppercase" />
-        </NavLink>
+      <div className="gap-5 lg:gap-3 lg:grid flex">
+        <div className="flex gap-3 justify-between">
+          <NavigationLink text="Projekty" path="/" />
+          <button
+            className={twMerge(
+              "opacity-0 border-ui-light-grey bg-ui-light-grey solid  p-1 uppercase rounded-sm text-[#333] text-xs",
+              filteredCategories?.length && "opacity-100",
+              "hidden lg:block"
+            )}
+            onClick={() => filterByCategory?.([])}
+          >
+            Wyczyść filtry
+          </button>
+        </div>
         {showCategories && (
           <div className="hidden lg:grid gap-2">
             {Object.values(categories).map((category) => (
-              <button
-                key={category.name}
-                onClick={() =>
-                  isActive(category.category)
-                    ? filterByCategory?.((state) =>
-                        state.filter((v) => v !== category.category)
-                      )
-                    : filterByCategory?.((state) => [
-                        ...state,
-                        category.category,
-                      ])
-                }
-                className={twMerge(
-                  "text-left px-2 py-1 duration-500 duration bg-transparent w-fit",
-                  isActive(category.category) && `${category.color} text-white `
-                )}
-              >
-                <Tag
-                  className="[&_p]:label-m inline-block"
-                  text={category.name}
-                />
-              </button>
+              <CategoryTag
+                category={category}
+                filterByCategory={filterByCategory}
+                filteredCategories={filteredCategories}
+              />
             ))}
           </div>
         )}
-        <NavLink className={(isActive) => isActive && "underline"} to="/about">
-          <Text text="O mnie" className="title uppercase" />
-        </NavLink>
-        <NavLink
-          className={(isActive) => isActive && "underline"}
-          to="/contact"
-        >
-          <Text text="Kontakt" className="title uppercase" />
-        </NavLink>
+        <NavigationLink text="O mnie" path="/about" />
+        <NavigationLink text="Kontakt" path="/contact" />
         <Text
           text="Copyright Panie Kolego Projekt 2024"
           className="label-s mt-auto text-ui-primary-grey hidden lg:block"

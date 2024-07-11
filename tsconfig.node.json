@@ -9,8 +9,10 @@
     "strict": true,
     "noEmit": true,
     "paths": {
-      "@atoms": ["./src/ui/atoms"],
-      "@pages": ["./src/pages"]
+      "@": ["./src"],
+      "@/*": ["./src/*"],
+      "atoms": ["./src/ui/atoms"],
+      "$ui/*": ["./src/ui/*"]
     }
   },
   "include": ["vite.config.ts"]

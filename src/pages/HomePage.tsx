@@ -15,7 +15,11 @@ export const HomePage = () => {
         showCategories={true}
       />
       <div className="lg:col-span-10 col-span-12 bg-ui-light-grey grid grid-cols-12 gap-4 border-l solid border-ui-grey">
-        <ProjectList cards={projects} filteredCategories={filteredCategories} />
+        <ProjectList
+          cards={projects}
+          filteredCategories={filteredCategories}
+          filterByCategory={filterByCategory}
+        />
       </div>
     </main>
   );
