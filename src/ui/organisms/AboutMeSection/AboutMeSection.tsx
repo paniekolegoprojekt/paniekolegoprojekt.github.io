@@ -3,7 +3,7 @@ import { Text } from "atoms";
 export const AboutMeSection = () => {
   return (
     <div
-      className="xxl:w-[1580px] w-full m-auto  p-4 xl:py-16 xl:px-16 bg-white"
+      className="xxl:w-[1580px] w-full m-auto px-4 py-8 xl:py-16 xl:px-16 bg-white"
       id="aboutme"
     >
       <Text className="title-xl lg:title-2xl mb-4" text="O MNIE" />

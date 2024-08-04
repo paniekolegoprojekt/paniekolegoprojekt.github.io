@@ -9,7 +9,7 @@ const Hero = () => {
         alt="logo"
         width={200}
         height={200}
-        className="h-40 absolute ml-12 mt-12 z-20"
+        className="lg:h-40 h-32 ml-0 lg:ml-12 absolute mt-12 z-20"
       />
       <video
         className="absolute inset-0 w-full object-cover h-screen"
@@ -19,7 +19,7 @@ const Hero = () => {
         muted={true}
         loop
       />
-      <div className="gap-2 xl:gap-16 z-20 absolute right-16 top-10 xl:top-20 text-black xl:flex grid">
+      <div className="gap-2 xl:gap-16 z-20 absolute right-4 xl:right-16 top-10 xl:top-20 text-black xl:flex text-right xl:text-left grid">
         <NavLink text="PROJEKTY" href="#projects" />
         <NavLink text="O MNIE" href="#aboutme" />
         <NavLink text="KONTAKT" href="#contact" />

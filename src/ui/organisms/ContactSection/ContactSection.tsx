@@ -3,12 +3,12 @@ import { Text } from "atoms";
 export const ContactSection = () => {
   return (
     <div
-      className="bg-black text-white lg:text-ui-dark xxl:w-[1580px] w-full m-auto lg:bg-ui-light-grey p-4 xl:py-16 xl:px-16"
+      className="bg-black text-white lg:text-ui-dark xxl:w-[1580px] w-full m-auto lg:bg-ui-light-grey px-4 py-8 xl:py-16 xl:px-16"
       id="contact"
     >
       <div className="paragraph-s m-auto gap-4 grid justify-center">
         <Text
-          className="lg:title-2xl title-xl mb-4 text-ui-primary-grey"
+          className="lg:title-2xl title-xl mb-0 xl:mb-4 text-ui-primary-grey"
           text="KONTAKT"
         />
 

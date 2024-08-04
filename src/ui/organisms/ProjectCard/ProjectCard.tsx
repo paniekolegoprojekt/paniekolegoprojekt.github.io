@@ -16,7 +16,7 @@ const ProjectCard = ({
       )}
       onClick={() => setActiveProject(project)}
     >
-      <div className="grid bg-white duration-500 aspect-square rounded-md justify-center items-center ">
+      <div className="grid bg-white duration-500 aspect-square justify-center items-center">
         {project?.thumbnail && (
           <img
             src={project.thumbnail}
