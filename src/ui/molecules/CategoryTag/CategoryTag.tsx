@@ -21,7 +21,7 @@ export const CategoryTag = ({
           : filterByCategory?.((state) => [...state, category.value])
       }
       className={twMerge(
-        "text-left px-2 py-1 duration-500 duration bg-transparent w-fit text-ui-primary-grey bg-ui-grey rounded-lg",
+        "text-left px-2 py-1 duration-500 duration bg-transparent w-fit text-ui-black  rounded-md",
         isActive(category.value) && `${category.color} text-white `
       )}
     >

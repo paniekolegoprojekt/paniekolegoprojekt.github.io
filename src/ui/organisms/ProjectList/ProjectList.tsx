@@ -3,14 +3,8 @@ import { CardListProps } from "./types";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { ProjectProps } from "$ui/types";
 import { ProjectModal } from "../ProjectModal/ProjectModal";
-import { categories } from "../../../const";
-import { CategoryTag } from "@/ui/molecules";
 
-const ProjectList = ({
-  cards,
-  filteredCategories,
-  filterByCategory,
-}: CardListProps) => {
+const ProjectList = ({ cards, filteredCategories }: CardListProps) => {
   const isFiltered = (card: ProjectProps) =>
     filteredCategories?.length
       ? filteredCategories.some((tag) => card?.tags?.includes(tag))
@@ -21,16 +15,7 @@ const ProjectList = ({
   >();
 
   return (
-    <div className="col-span-12 flex h-[calc(100vh_-2rem_-7vh)] lg:h-screen flex-wrap content-start p-4 overflow-y-auto :hover:*:grayscale">
-      <div className="flex flex-wrap gap-2 w-full lg:hidden">
-        {Object.values(categories).map((category) => (
-          <CategoryTag
-            category={category}
-            filterByCategory={filterByCategory}
-            filteredCategories={filteredCategories}
-          />
-        ))}
-      </div>
+    <div className="col-span-12 flex flex-wrap content-start p-4  :hover:*:grayscale">
       {cards.map((project) => (
         <ProjectCard
           project={project}
