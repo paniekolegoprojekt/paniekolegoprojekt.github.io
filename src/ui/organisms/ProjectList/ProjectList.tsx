@@ -4,7 +4,7 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 import { ProjectProps } from "$ui/types";
 import { ProjectModal } from "../ProjectModal/ProjectModal";
 
-const ProjectList = ({ cards, filteredCategories }: CardListProps) => {
+export const ProjectList = ({ cards, filteredCategories }: CardListProps) => {
   const isFiltered = (card: ProjectProps) =>
     filteredCategories?.length
       ? filteredCategories.some((tag) => card?.tags?.includes(tag))
@@ -15,12 +15,13 @@ const ProjectList = ({ cards, filteredCategories }: CardListProps) => {
   >();
 
   return (
-    <div className="col-span-12 flex flex-wrap content-start p-4  :hover:*:grayscale">
+    <div className="col-span-12 flex flex-wrap content-start :hover:*:grayscale">
       {cards.map((project) => (
         <ProjectCard
           project={project}
           key={project.id}
           isFilteredOut={!isFiltered(project)}
+          isFiltering={!!filteredCategories.length}
           setActiveProject={setActiveProject}
         />
       ))}
@@ -28,10 +29,9 @@ const ProjectList = ({ cards, filteredCategories }: CardListProps) => {
         <ProjectModal
           project={activeProject}
           setActiveProject={setActiveProject}
+          isOpen={!!activeProject}
         />
       )}
     </div>
   );
 };
-
-export default ProjectList;

@@ -120,7 +120,7 @@ export const projects: ProjectProps[] = [
       "/images/lokal/asset8.png",
     ],
     tags: [Category.GraphicDesign, Category.Event],
-    className: "bg-[#e61452]",
+    // className: "bg-[#e61452]",
   },
   {
     id: "pdr",

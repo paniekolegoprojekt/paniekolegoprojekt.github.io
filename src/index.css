@@ -1,9 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  /* overflow: hidden; */
+  scroll-behavior: smooth;
+}
+
+video:focus {
+  outline: none;
+}
+
+video {
+  outline: none;
+  clip-path: inset(1px 1px);
 }

@@ -5,6 +5,7 @@ import parse from "html-react-parser";
 import { ProjectModalProps } from "./types";
 import { categories } from "../../../const";
 import { Carousel } from "../../molecules";
+import { useCallback, useEffect } from "react";
 
 export const ProjectModal = ({
   project,
@@ -13,35 +14,57 @@ export const ProjectModal = ({
   const { description, name, shortDesc, date, tags, className, assets } = {
     ...project,
   };
+  const closeModal = useCallback(
+    () => setActiveProject(undefined),
+    [setActiveProject]
+  );
+
+  useEffect(() => {
+    const close = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    };
+    window.addEventListener("keydown", close);
+    document.getElementsByTagName("html")[0].style.overflow = "hidden";
+    return () => {
+      document.getElementsByTagName("html")[0].style.overflow = "auto";
+      window.removeEventListener("keydown", close);
+    };
+  }, [closeModal]);
 
   return (
     <div
       className={
-        "inset-0 bg-ui-light-grey z-30 fixed block duration-200 h-screen overflow-auto animate-fadeIn"
+        "inset-0 bg-ui-light-grey z-30 fixed block duration-200 h-screen overflow-auto "
       }
     >
       <div className="lg:flex flex-wrap">
         <div className="w-full lg:w-1/2 p-8 lg:p-32 xl:p-40">
           <button
-            className="flex w-full gap-2 items-center mb-8"
-            onClick={() => setActiveProject(undefined)}
+            className="flex w-full gap-2 items-center mb-8 underline text-ui-primary-blue"
+            onClick={closeModal}
           >
             <ArrowLeftIcon className="h-4" />
             <Text text="wróć do listy projektów" />
           </button>
-          <div className="mb-8 flex justify-between">
+          <div className="mb-1 flex justify-between">
             <div>
               {name && <Text text={name} className="title-xl" />}
               {shortDesc && (
-                <Text text={shortDesc} className="paragraph-xs uppercase" />
+                <Text
+                  text={`${shortDesc} / ${date}`}
+                  className="paragraph-m uppercase"
+                />
               )}
-              {date && <Text text={date} className="label-s" />}
             </div>
           </div>
           {description && (
-            <div className="paragraph-m">{parse(description)}</div>
+            <div className="xl:paragraph-m paragraph-xs text-ui-dark">
+              {parse(description)}
+            </div>
           )}
-          <div className="flex gap-4 my-4">
+          <div className="flex gap-4 my-8">
             {tags?.map((tag) => {
               const { name, color } = categories[tag];
               return (
@@ -59,7 +82,7 @@ export const ProjectModal = ({
         </div>
         <Carousel
           className={twMerge(
-            "w-full lg:w-1/2 h-auto lg:h-screen bg-white ",
+            "w-full lg:w-1/2 h-auto lg:h-screen bg-white xl:py-0 py-4",
             className
           )}
         >
