@@ -10,7 +10,7 @@ export const Filters = ({
 }: FiltersProps) => {
   return (
     <div className={twMerge(className)}>
-      <div className="flex flex-wrap lg:grid gap-4 my-4 lg:my-0">
+      <div className="flex flex-wrap lg:grid gap-4 my-2 mb-8 lg:mb-2 lg:my-0">
         {Object.values(categories).map((category) => (
           <CategoryTag
             key={category.name}

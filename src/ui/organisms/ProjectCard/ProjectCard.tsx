@@ -9,14 +9,14 @@ const ProjectCard = ({
   return (
     <div
       className={twMerge(
-        "cursor-pointer scale-1 duration-500 overflow-hidden p-2 xl:p-4 w-[50%] lg:h-auto lg:w-[25%] flex aspect-square hover:scale-105",
+        "cursor-pointer rounded-md scale-1 duration-500 overflow-hidden p-2 xl:p-4 w-[33.3%] lg:h-auto lg:w-[12.5%] flex aspect-square",
         !isFilteredOut
-          ? ""
-          : "m-0 w-0 lg:w-0 h-0 scale-0 p-0 xl:p-0 grayscale-0"
+          ? "grayscale-0"
+          : "m-0 w-0 lg:w-0 h-0 scale-0 p-0 xl:p-0 grayscale"
       )}
       onClick={() => setActiveProject(project)}
     >
-      <div className="grid bg-white duration-500 aspect-square justify-center items-center">
+      <div className="grid bg-white duration-500 aspect-square justify-center items-center rounded-md">
         {project?.thumbnail && (
           <img
             src={project.thumbnail}

@@ -16,10 +16,10 @@ export const categories: Record<Category, CategoryType> = {
     color: "bg-ui-blue",
     value: Category.Website,
   },
-  [Category.Software]: {
-    name: "Software",
+  [Category.MobileApp]: {
+    name: "Mobile app",
     color: "bg-ui-red",
-    value: Category.Software,
+    value: Category.MobileApp,
   },
   [Category.Event]: {
     name: "Event Poster",
@@ -368,7 +368,7 @@ export const projects: ProjectProps[] = [
     <p>- opublikowana w sklepie Google Play jako darmowa gierka w kwietniu 2016, dostępna do stycznia 2018</p>
     <p>- bardzo ważna dla mnie jako, że było to moje pierwsze autorskie oprogramowanie</p>
     `,
-    tags: [Category.Software, Category.GraphicDesign],
+    tags: [Category.MobileApp, Category.GraphicDesign],
     className: "bg-[#44464b]",
   },
   {

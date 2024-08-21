@@ -28,7 +28,7 @@ export const CategoryTag = ({
       )}
     >
       <Tag
-        className="paragraph-l lg:paragraph-xl inline-block"
+        className="paragraph-m  xl:paragraph-l 2xl:paragraph-xl inline-block"
         text={category.name}
       />
     </button>

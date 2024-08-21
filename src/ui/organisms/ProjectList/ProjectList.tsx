@@ -15,7 +15,7 @@ export const ProjectList = ({ cards, filteredCategories }: CardListProps) => {
   >();
 
   return (
-    <div className="col-span-12 flex flex-wrap content-start :hover:*:grayscale">
+    <div className="col-span-12 flex flex-wrap content-start -m-2">
       {cards.map((project) => (
         <ProjectCard
           project={project}

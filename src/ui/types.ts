@@ -6,7 +6,7 @@ export enum Category {
   Branding,
   GraphicDesign,
   Website,
-  Software,
+  MobileApp,
   Event,
   Naming,
   Music,

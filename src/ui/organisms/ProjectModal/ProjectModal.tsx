@@ -39,7 +39,7 @@ export const ProjectModal = ({
         "inset-0 bg-ui-light-grey z-30 fixed block duration-200 h-screen overflow-auto "
       }
     >
-      <div className="lg:flex flex-wrap">
+      <div className="lg:flex flex-wrap max-w-[1380px] m-auto">
         <div className="w-full lg:w-1/2 p-8 lg:p-32 xl:p-40">
           <button
             className="flex w-full gap-2 items-center mb-8 underline text-ui-primary-blue"

@@ -14,5 +14,4 @@ video:focus {
 
 video {
   outline: none;
-  clip-path: inset(1px 1px);
 }
