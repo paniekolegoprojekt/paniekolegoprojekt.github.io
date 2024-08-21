@@ -14,6 +14,8 @@ export const ProjectList = ({ cards, filteredCategories }: CardListProps) => {
     ProjectProps | undefined
   >();
 
+  const filteredCount = cards.filter(isFiltered).length;
+
   return (
     <div className="col-span-12 flex flex-wrap content-start -m-2">
       {cards.map((project) => (
@@ -21,7 +23,7 @@ export const ProjectList = ({ cards, filteredCategories }: CardListProps) => {
           project={project}
           key={project.id}
           isFilteredOut={!isFiltered(project)}
-          isFiltering={!!filteredCategories.length}
+          filteredCount={filteredCount}
           setActiveProject={setActiveProject}
         />
       ))}

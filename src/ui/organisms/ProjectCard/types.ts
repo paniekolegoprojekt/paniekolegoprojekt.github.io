@@ -3,7 +3,7 @@ import { ProjectProps } from "../../types";
 
 export type ProjectCardProps = {
   isFilteredOut?: boolean;
-  isFiltering?: boolean;
+  filteredCount?: number;
   setActiveProject: Dispatch<SetStateAction<ProjectProps | undefined>>;
   project?: ProjectProps;
 };

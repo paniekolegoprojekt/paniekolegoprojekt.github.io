@@ -42,12 +42,15 @@ export const ProjectModal = ({
       <div className="lg:flex flex-wrap max-w-[1380px] m-auto">
         <div className="w-full lg:w-1/2 p-8 lg:p-32 xl:p-40">
           <button
-            className="flex w-full gap-2 items-center mb-8 underline text-ui-primary-blue"
+            className={twMerge(
+              "flex mb-8 border-ui-primary-grey border transition-opacity ease-linear bg-ui-primary-grey solid p-2 xl:px-8 xl:py-4 uppercase rounded-md xl:label-xl label-s items-center justify-center gap-1"
+            )}
             onClick={closeModal}
           >
             <ArrowLeftIcon className="h-4" />
             <Text text="wróć do listy projektów" />
           </button>
+
           <div className="mb-1 flex justify-between">
             <div>
               {name && <Text text={name} className="title-xl" />}
