@@ -7,9 +7,9 @@ export const ArrowBtn = (props: ComponentPropsWithRef<"button">) => {
   return (
     <button
       className={twMerge(
-        "absolute p-4 bottom-0 top-0 m-auto cursor-pointer z-30 [&>svg]:fill-ui-primary-blue",
+        "absolute p-4 bottom-0 top-0 m-auto cursor-pointer z-30 [&>svg]:fill-ui-black",
         className,
-        disabled && "[&>svg]:fill-ui-primary-grey"
+        disabled && "disabled [&&>svg]:fill-ui-dark"
       )}
       {...restProps}
     >

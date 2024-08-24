@@ -330,7 +330,7 @@ export const projects: ProjectProps[] = [
       "logo dla zespołu muzycznego, oparte o wektoryzację odręcznego podpisu",
     assets: ["/images/szefner/asset1.png", "/images/szefner/asset2.png"],
     tags: [Category.Branding],
-    className: "bg-black",
+    className: "bg-black [&_svg]:fill-white",
   },
   {
     id: "septymole",

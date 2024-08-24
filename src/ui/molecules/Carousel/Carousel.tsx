@@ -46,6 +46,6 @@ export const Carousel = ({ children, className }: CarouselProps) => {
       </div>
     </div>
   ) : (
-    <div>test</div>
+    <div className={className}>{children}</div>
   );
 };
