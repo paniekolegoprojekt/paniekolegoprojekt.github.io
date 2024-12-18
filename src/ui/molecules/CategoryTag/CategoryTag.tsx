@@ -5,22 +5,15 @@ import { twMerge } from "tailwind-merge";
 
 export const CategoryTag = ({
   category,
-  filterByCategory,
-  filteredCategories,
+  setCategory,
+  selectedCategory,
 }: CategoryTagProps) => {
-  const { value } = category;
-  const filterCategory = (state: Category[]) =>
-    state.filter((v: Category) => v !== value);
   const isActive = (category: Category) =>
-    filteredCategories?.includes(category);
+    selectedCategory && selectedCategory.value === category;
 
   return (
     <button
-      onClick={() =>
-        isActive(category.value)
-          ? filterByCategory?.((state) => filterCategory(state))
-          : filterByCategory?.((state) => [...state, category.value])
-      }
+      onClick={() => setCategory?.(category)}
       className={twMerge(
         "text-left px-2 py-1 duration-500 duration bg-transparent w-fit text-ui-black border solid border-[#777] text-[#777] rounded-md",
         isActive(category.value) &&

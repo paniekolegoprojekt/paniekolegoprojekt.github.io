@@ -15,6 +15,7 @@ const config: Config = {
     extend: {
       animation: {
         fadeIn: "fadeIn 0.5s ease-out",
+        fadeInSlow: "fadeIn 1.0s ease-out",
         slideIn: "slideIn 300ms ease-in-out",
         hideOut: "hideOut 1.5s ease-in",
       },

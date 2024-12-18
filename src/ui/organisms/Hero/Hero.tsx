@@ -1,4 +1,3 @@
-import { NavLink } from "@/ui/molecules/NavLink/NavLink";
 import { Text } from "atoms";
 
 const Hero = () => {
@@ -9,7 +8,7 @@ const Hero = () => {
         alt="logo"
         width={200}
         height={200}
-        className="lg:h-40 h-32 ml-0 lg:ml-12 absolute mt-12 z-20"
+        className="lg:h-30 h-32 ml-0 lg:ml-12 absolute mt-12 z-20 animate-fadeInSlow"
       />
       <video
         className="absolute inset-0 w-full object-cover h-screen"
@@ -19,12 +18,7 @@ const Hero = () => {
         muted={true}
         loop
       />
-      <div className="gap-2 xl:gap-16 z-20 absolute right-4 xl:right-16 top-10 xl:top-20 text-black xl:flex text-right xl:text-left grid">
-        <NavLink text="PROJEKTY" href="#projects" />
-        <NavLink text="O MNIE" href="#aboutme" />
-        <NavLink text="KONTAKT" href="#contact" />
-      </div>
-      <div className="absolute inset-0 m-auto w-[300px] h-20 text-center bottom-0 mb-0 ">
+      <div className="absolute inset-0 m-auto w-[300px] h-20 text-center bottom-0 mb-0 animate-fadeInSlow">
         <Text className="paragraph-xl " text="Eryk Rozdolski" />
         <Text
           className="paragraph-m text-ui-primary-grey"

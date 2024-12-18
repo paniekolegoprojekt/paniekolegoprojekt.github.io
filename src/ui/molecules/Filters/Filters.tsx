@@ -5,8 +5,8 @@ import { CategoryTag } from "..";
 
 export const Filters = ({
   className,
-  filterByCategory,
-  filteredCategories,
+  setCategory,
+  selectedCategory,
 }: FiltersProps) => {
   return (
     <div className={twMerge(className)}>
@@ -15,8 +15,8 @@ export const Filters = ({
           <CategoryTag
             key={category.name}
             category={category}
-            filterByCategory={filterByCategory}
-            filteredCategories={filteredCategories}
+            setCategory={setCategory}
+            selectedCategory={selectedCategory}
           />
         ))}
       </div>

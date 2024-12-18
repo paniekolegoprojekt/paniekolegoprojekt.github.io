@@ -36,14 +36,14 @@ export const ProjectModal = ({
   return (
     <div
       className={
-        "inset-0 bg-ui-light-grey z-30 fixed block duration-200 h-screen overflow-auto "
+        "inset-0 bg-ui-light-grey z-30 fixed block duration-200 h-screen overflow-auto animate-fadeIn"
       }
     >
       <div className="lg:flex flex-wrap max-w-[1380px] m-auto">
         <div className="w-full lg:w-1/2 p-8 lg:p-4 xl:p-4 m-auto">
           <button
             className={twMerge(
-              "flex mb-8 border-ui-primary-grey border transition-opacity ease-linear bg-ui-primary-grey solid p-2 xl:px-8 xl:py-4 uppercase rounded-md xl:label-xl label-s items-center justify-center gap-1"
+              "flex mb-8 border-ui-primary-grey border transition-opacity ease-linear bg-white solid p-2 xl:px-4 xl:py-3 uppercase rounded-md xl:label-xl label-s items-center justify-center gap-1"
             )}
             onClick={closeModal}
           >
