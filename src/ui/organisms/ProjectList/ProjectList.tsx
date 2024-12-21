@@ -10,7 +10,7 @@ export const ProjectList = ({ cards, selectedCategory }: CardListProps) => {
   >();
 
   return (
-    <div className="col-span-12 flex flex-wrap content-start -m-2">
+    <div className="col-span-12 grid lg:grid-cols-4 grid-cols-3 gap-4">
       {cards.map((project) => (
         <ProjectCard
           project={project}
@@ -19,13 +19,11 @@ export const ProjectList = ({ cards, selectedCategory }: CardListProps) => {
           selectedCategory={selectedCategory}
         />
       ))}
-      {activeProject && (
-        <ProjectModal
-          project={activeProject}
-          setActiveProject={setActiveProject}
-          isOpen={!!activeProject}
-        />
-      )}
+      <ProjectModal
+        project={activeProject}
+        setActiveProject={setActiveProject}
+        isOpen={!!activeProject}
+      />
     </div>
   );
 };

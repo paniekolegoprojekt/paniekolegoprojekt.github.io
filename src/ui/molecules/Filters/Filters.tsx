@@ -1,25 +1,16 @@
 import { FiltersProps } from "./types";
-import { twMerge } from "tailwind-merge";
 import { categories } from "../../../const";
 import { CategoryTag } from "..";
 
-export const Filters = ({
-  className,
-  setCategory,
-  selectedCategory,
-}: FiltersProps) => {
-  return (
-    <div className={twMerge(className)}>
-      <div className="flex flex-wrap lg:grid gap-4 my-2 mb-8 lg:mb-2 lg:my-0">
-        {Object.values(categories).map((category) => (
-          <CategoryTag
-            key={category.name}
-            category={category}
-            setCategory={setCategory}
-            selectedCategory={selectedCategory}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+export const Filters = ({ setCategory, selectedCategory }: FiltersProps) => (
+  <div className="flex flex-wrap gap-4 mt-4 mb-8 col-span-12 ">
+    {Object.values(categories).map((category) => (
+      <CategoryTag
+        key={category.name}
+        category={category}
+        setCategory={setCategory}
+        selectedCategory={selectedCategory}
+      />
+    ))}
+  </div>
+);

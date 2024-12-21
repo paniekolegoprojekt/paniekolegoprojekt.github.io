@@ -5,112 +5,105 @@ import parse from "html-react-parser";
 import { ProjectModalProps } from "./types";
 import { categories } from "../../../const";
 import { Carousel } from "../../molecules";
-import { useCallback, useEffect } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 
 export const ProjectModal = ({
   project,
+  isOpen,
   setActiveProject,
 }: ProjectModalProps) => {
   const { description, name, shortDesc, date, tags, className, assets } = {
     ...project,
   };
-  const closeModal = useCallback(
-    () => setActiveProject(undefined),
-    [setActiveProject]
-  );
 
-  useEffect(() => {
-    const close = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        closeModal();
-      }
-    };
-    window.addEventListener("keydown", close);
-    document.getElementsByTagName("html")[0].style.overflow = "hidden";
-    return () => {
-      document.getElementsByTagName("html")[0].style.overflow = "auto";
-      window.removeEventListener("keydown", close);
-    };
-  }, [closeModal]);
+  const closeModal = () => isOpen && setActiveProject(undefined);
 
   return (
-    <div
-      className={
-        "inset-0 bg-ui-light-grey z-30 fixed block duration-200 h-screen overflow-auto animate-fadeIn"
-      }
-    >
-      <div className="lg:flex flex-wrap max-w-[1380px] m-auto">
-        <div className="w-full lg:w-1/2 p-8 lg:p-4 xl:p-4 m-auto">
-          <button
-            className={twMerge(
-              "flex mb-8 border-ui-primary-grey border transition-opacity ease-linear bg-white solid p-2 xl:px-4 xl:py-3 uppercase rounded-md xl:label-xl label-s items-center justify-center gap-1"
-            )}
-            onClick={closeModal}
-          >
-            <ArrowLeftIcon className="h-4" />
-            <Text text="wróć do listy projektów" />
-          </button>
-
-          <div className="mb-6 flex justify-between">
-            <div>
-              {name && <Text text={name} className="title-xl" />}
-              {shortDesc && (
-                <Text
-                  text={`${shortDesc} / ${date}`}
-                  className="paragraph-m uppercase"
-                />
-              )}
-            </div>
-          </div>
-          {description && (
-            <div className="xl:paragraph-m paragraph-xs text-ui-dark">
-              {parse(description)}
-            </div>
-          )}
-          <div className="flex gap-4 my-8">
-            {tags?.map((tag) => {
-              const { name, color } = categories[tag];
-              return (
-                <Tag
-                  key={name}
-                  text={name}
-                  className={twMerge(
-                    color,
-                    "py-1 px-2 text-white roundedn-md title-xs"
+    <Dialog.Root open={isOpen} onOpenChange={closeModal}>
+      <Dialog.Portal>
+        <Dialog.Content className="fixed inset-0 max-h-[100vh] w-[100vw] overflow-auto bg-white z-30 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-fadeIn data-[state=closed]:animate-fadeOut">
+          <div className="lg:flex flex-wrap max-w-[1380px] m-auto">
+            <div className="w-full lg:w-1/2 p-8 lg:p-4 xl:p-4 m-auto">
+              <div className="mb-4 flex justify-between">
+                <div>
+                  {date && (
+                    <Text text={date} className="paragraph-m  uppercase" />
                   )}
-                />
-              );
-            })}
-          </div>
-        </div>
-        <Carousel
-          className={twMerge(
-            "w-full lg:w-1/2 h-auto lg:h-screen bg-white xl:py-0 py-4",
-            className
-          )}
-        >
-          {assets?.map((asset, index) => (
-            <div className="px-4 self-center items-center mx-10" key={index}>
-              <div
-                key={asset}
-                className="grid grid-flow-col auto-cols-1-slides justify-center items-center h-auto lg:h-screen"
-              >
-                {asset.includes("youtube") ? (
-                  <VideoPlayer src={asset} />
-                ) : (
-                  <img
-                    src={asset}
-                    alt={asset}
-                    width="1600"
-                    height="900"
-                    className="w-auto max-h-[50vh] lg:max-h-[100vh]"
-                  />
-                )}
+                  {name && <Text text={name} className="title-xl uppercase" />}
+                  {shortDesc && (
+                    <Text
+                      text={`${shortDesc} / ${date}`}
+                      className="paragraph-m uppercase"
+                    />
+                  )}
+                </div>
               </div>
+              <div className="flex gap-4 mb-4">
+                {tags?.map((tag) => {
+                  const { name, color } = categories[tag];
+                  return (
+                    <Tag
+                      key={name}
+                      text={name}
+                      className={twMerge(
+                        color,
+                        "py-1 px-2 text-white roundedn-md title-xs"
+                      )}
+                    />
+                  );
+                })}
+              </div>
+              {description && (
+                <div className="xl:paragraph-m paragraph-xs text-ui-dark">
+                  {parse(description)}
+                </div>
+              )}
+
+              <button
+                className={twMerge(
+                  "flex mt-4 border-ui-primary-grey border transition-opacity ease-linear bg-white solid p-2 xl:px-4 xl:py-3 uppercase rounded-md xl:label-xl label-s items-center justify-center gap-1 ",
+                  !isOpen && "opacity-0"
+                )}
+                onClick={closeModal}
+              >
+                <ArrowLeftIcon className="h-4" />
+                <Text text="wróć do listy projektów" />
+              </button>
             </div>
-          ))}
-        </Carousel>
-      </div>
-    </div>
+            <Carousel
+              className={twMerge(
+                "w-full lg:w-1/2 h-auto lg:h-screen bg-white xl:py-0 py-4",
+                className
+              )}
+            >
+              {assets?.map((asset, index) => (
+                <div
+                  className="px-4 self-center items-center mx-10"
+                  key={index}
+                >
+                  <div
+                    key={asset}
+                    className="grid grid-flow-col auto-cols-1-slides justify-center items-center h-auto lg:h-screen"
+                  >
+                    {asset.includes("youtube") ? (
+                      <VideoPlayer src={asset} />
+                    ) : (
+                      <img
+                        src={asset}
+                        alt={asset}
+                        width="1600"
+                        height="900"
+                        className="w-auto max-h-[50vh] lg:max-h-[100vh]"
+                      />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+          <Dialog.Close />
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 };

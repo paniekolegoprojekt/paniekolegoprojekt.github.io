@@ -14,24 +14,23 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        fadeIn: "fadeIn 0.5s ease-out",
+        fadeIn: "fadeIn 0.75s",
         fadeInSlow: "fadeIn 1.0s ease-out",
         slideIn: "slideIn 300ms ease-in-out",
-        hideOut: "hideOut 1.5s ease-in",
+        fadeOut: "fadeOut 0.75s",
       },
       keyframes: {
         fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "100" },
+          "0%": { left: "100%" },
+          "100%": { left: "0" },
         },
         slideIn: {
           "0%": { top: "150%" },
           "100%": { top: "50%" },
         },
-        hideOut: {
-          "0%": { display: "inherit" },
-          "99%": { display: "inherit" },
-          "100%": { display: "none" },
+        fadeOut: {
+          "0%": { left: "0" },
+          "100%": { left: "100%" },
         },
       },
       backgroundImage: {
