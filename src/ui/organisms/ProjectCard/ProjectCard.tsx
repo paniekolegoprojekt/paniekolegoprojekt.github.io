@@ -11,7 +11,7 @@ const ProjectCard = ({
   return (
     <div
       className={twMerge(
-        "cursor-pointer duration-200 overflow-hidden flex aspect-square relative",
+        "cursor-pointer duration-200 overflow-hidden flex aspect-square relative hover:scale-105",
         isSelected && "order-first"
       )}
       onClick={() => setActiveProject([project, true])}

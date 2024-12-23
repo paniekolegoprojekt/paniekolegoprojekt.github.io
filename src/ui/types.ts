@@ -24,7 +24,7 @@ export type ProjectProps = {
   shortDesc?: string;
   tags?: Category[];
   thumbnail: string;
-  assets?: string[];
+  assets: string[];
   className?: string;
 };
 

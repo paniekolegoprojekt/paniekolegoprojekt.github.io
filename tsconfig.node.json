@@ -12,7 +12,12 @@
       "@": ["./src"],
       "@/*": ["./src/*"],
       "atoms": ["./src/ui/atoms"],
-      "$ui/*": ["./src/ui/*"]
+      "$ui/*": ["./src/ui/*"],
+      "@src": ["src"],
+      "@/molecules": ["./src/ui/molecules"],
+      "@/organisms": ["./src/ui/organisms"],
+      "@atoms": ["./src/ui/components/atoms/index.ts"],
+      "@atoms/*": ["./src/ui/components/atoms"]
     }
   },
   "include": ["vite.config.ts"]

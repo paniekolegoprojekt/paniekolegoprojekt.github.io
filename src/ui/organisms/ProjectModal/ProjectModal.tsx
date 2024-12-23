@@ -1,11 +1,13 @@
 import { twMerge } from "tailwind-merge";
-import { ArrowLeftIcon } from "@heroicons/react/24/solid";
-import { Tag, Text, VideoPlayer } from "../../atoms";
+import { Tag, Text } from "../../atoms";
 import parse from "html-react-parser";
 import { ProjectModalProps } from "./types";
 import { categories } from "../../../const";
-import { Carousel } from "../../molecules";
+import { Carousel } from "@/ui/molecules";
 import * as Dialog from "@radix-ui/react-dialog";
+import Media from "./blocks/Media/Media";
+import { dialogContentCx } from "./const";
+import BackBtn from "./blocks/BackBtn/BackBtn";
 
 export const ProjectModal = ({
   project,
@@ -16,12 +18,13 @@ export const ProjectModal = ({
     ...project,
   };
 
-  const closeModal = () => isOpen && setActiveProject([project, false]);
+  const closeModal = () =>
+    isOpen ? setActiveProject([project, false]) : undefined;
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={closeModal}>
       <Dialog.Portal>
-        <Dialog.Content className="fixed inset-0 max-h-[100vh] w-[100vw] bg-ui-light-grey overflow-auto z-30 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-slideIn data-[state=closed]:animate-slideOut">
+        <Dialog.Content className={dialogContentCx}>
           <div className="lg:flex flex-wrap max-w-[1380px] m-auto">
             <div className="w-full lg:w-1/2 p-8 content-center bg-ui-light-grey">
               <div className="mb-4 flex justify-between">
@@ -58,44 +61,22 @@ export const ProjectModal = ({
                   {parse(description)}
                 </div>
               )}
-
-              <button
-                className={twMerge(
-                  "flex mt-4 border-ui-primary-grey border transition-opacity ease-linear bg-white solid p-2 xl:px-4 xl:py-3 uppercase rounded-md xl:label-xl label-s items-center justify-center gap-1 outline-none "
-                )}
-                onClick={closeModal}
-              >
-                <ArrowLeftIcon className="h-4" />
-                <Text text="wróć do listy projektów" />
-              </button>
+              <BackBtn closeModal={closeModal} cx="hidden lg:flex" />
             </div>
             <Carousel
               className={twMerge(
-                "w-full lg:w-1/2 h-auto lg:h-screen bg-white xl:py-0 py-4",
+                "w-full lg:w-1/2 h-auto lg:h-screen bg-white xl:py-0 py-4 w-f",
                 className
               )}
             >
-              {assets?.map((asset, index) => (
-                <div className="px-4 self-center items-center" key={index}>
-                  <div
-                    key={asset}
-                    className="grid grid-flow-col auto-cols-1-slides justify-center items-center h-auto lg:h-screen"
-                  >
-                    {asset.includes("youtube") ? (
-                      <VideoPlayer src={asset} />
-                    ) : (
-                      <img
-                        src={asset}
-                        alt={asset}
-                        width="1600"
-                        height="900"
-                        className="w-auto max-h-[50vh] lg:max-h-[100vh]"
-                      />
-                    )}
-                  </div>
-                </div>
+              {assets?.map((url) => (
+                <Media url={url} />
               ))}
             </Carousel>
+            <BackBtn
+              closeModal={closeModal}
+              cx="flex m-4 lg:hidden w-fit p-4 w-[calc(100%_-_2rem)]"
+            />
           </div>
           <Dialog.Close />
         </Dialog.Content>
