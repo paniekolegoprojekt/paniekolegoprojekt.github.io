@@ -16,19 +16,19 @@ const config: Config = {
       animation: {
         fadeIn: "fadeIn 0.75s",
         fadeInSlow: "fadeIn 1.0s ease-out",
-        slideIn: "slideIn 300ms ease-in-out",
-        fadeOut: "fadeOut 0.75s",
+        slideIn: "slideIn 0.75s",
+        slideOut: "slideOut 0.75s",
       },
       keyframes: {
         fadeIn: {
-          "0%": { left: "100%" },
-          "100%": { left: "0" },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "100" },
         },
         slideIn: {
-          "0%": { top: "150%" },
-          "100%": { top: "50%" },
+          "0%": { left: "100%" },
+          "100%": { left: "0%" },
         },
-        fadeOut: {
+        slideOut: {
           "0%": { left: "0" },
           "100%": { left: "100%" },
         },

@@ -8,8 +8,8 @@ export const ProjectSection = () => {
   const [selectedCategory, setCategory] = useState<CategoryType | undefined>();
 
   return (
-    <div className="w-full m-auto bg-ui-light-grey" id="projects">
-      <div className="md:max-w-[1000px] w-full m-auto lg:my-16">
+    <div className="w-full m-auto bg-ui-light-grey lg:py-8" id="projects">
+      <div className="md:max-w-[1000px] w-full m-auto ">
         <div className="paragraph-m lg:paragraph-xl text-justify m-8">
           <p className="title-xl">Projekty</p>
           <p className="mt-4">

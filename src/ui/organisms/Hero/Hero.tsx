@@ -8,7 +8,7 @@ const Hero = () => {
         alt="logo"
         width={200}
         height={200}
-        className="lg:h-30 h-32 ml-0 lg:ml-12 absolute mt-12 z-20 animate-fadeInSlow"
+        className="lg:h-30 h-32 ml-0 lg:ml-12 absolute mt-12 z-20 animate-fadeIn"
       />
       <video
         className="absolute inset-0 w-full object-cover h-screen"
@@ -18,7 +18,7 @@ const Hero = () => {
         muted={true}
         loop
       />
-      <div className="absolute inset-0 m-auto w-[300px] h-20 text-center bottom-0 mb-0 animate-fadeInSlow">
+      <div className="absolute inset-0 m-auto w-[300px] h-20 text-center bottom-0 mb-0 animate-fadeIn">
         <Text className="paragraph-xl " text="Eryk Rozdolski" />
         <Text
           className="paragraph-m text-ui-primary-grey"

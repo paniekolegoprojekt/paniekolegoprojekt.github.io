@@ -13,9 +13,13 @@ export const CategoryTag = ({
 
   return (
     <button
-      onClick={() => setCategory?.(category)}
+      onClick={() =>
+        setCategory?.((current) =>
+          category !== current ? category : undefined
+        )
+      }
       className={twMerge(
-        "text-left px-2 py-1 duration-500 duration bg-white w-fit text-ui-black border solid  border-ui-primary-grey text-[#777] rounded-md",
+        "text-left px-2 pb-1 duration-500 duration bg-white w-fit text-ui-black border solid  border-ui-primary-grey text-[#777] rounded-md",
         isActive(category.value) &&
           `${category.color} text-white border-transparent`
       )}

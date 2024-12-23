@@ -14,7 +14,7 @@ const ProjectCard = ({
         "cursor-pointer duration-200 overflow-hidden flex aspect-square relative",
         isSelected && "order-first"
       )}
-      onClick={() => setActiveProject(project)}
+      onClick={() => setActiveProject([project, true])}
     >
       <div className="grid bg-white duration-200 aspect-square justify-center items-center relative">
         <img
@@ -22,7 +22,7 @@ const ProjectCard = ({
           alt="card-image"
           className={twMerge(
             "object-contain z-20 grid",
-            !isSelected && selectedCategory && "grayscale hover:grayscale-0"
+            !isSelected && "hover:grayscale-0"
           )}
           width={600}
           height={400}
@@ -33,7 +33,7 @@ const ProjectCard = ({
             isSelected && selectedCategory.color,
             isSelected && `opacity-[0.80]`,
             selectedCategory && !isSelected && "bg-white opacity-50",
-            "hover:opacity-0 hover:bg-transparent "
+            "hover:opacity-100 hover:bg-transparent "
           )}
         ></div>
       </div>
