@@ -24,14 +24,15 @@ export const Carousel = ({ children, className }: CarouselProps) => {
   } = usePrevNextButtons(emblaApi);
 
   return React.Children.count(children) > 1 ? (
-    <div className={twMerge("relative", className)}>
-      <ArrowBtn
-        onClick={onPrevButtonClick}
-        disabled={prevBtnDisabled}
-        className="left-0"
-      >
+    <div className={twMerge("flex w-full bg-white", className)}>
+      <ArrowBtn onClick={onPrevButtonClick} disabled={prevBtnDisabled}>
         <ArrowLeftCircleIcon className="h-8" />
       </ArrowBtn>
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="grid grid-flow-col" style={{ gridAutoColumns: "100%" }}>
+          {children}
+        </div>
+      </div>
       <ArrowBtn
         onClick={onNextButtonClick}
         disabled={nextBtnDisabled}
@@ -39,11 +40,6 @@ export const Carousel = ({ children, className }: CarouselProps) => {
       >
         <ArrowRightCircleIcon className="h-8" />
       </ArrowBtn>
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="grid grid-flow-col" style={{ gridAutoColumns: "100%" }}>
-          {children}
-        </div>
-      </div>
     </div>
   ) : (
     <div className={className}>{children}</div>

@@ -1,35 +1,17 @@
-export type Component = {
+import { ProjectType, Section } from "@/const/const";
+
+export type ComponentType = {
   className?: string;
 };
 
-export enum Category {
-  Branding,
-  GraphicDesign,
-  Website,
-  MobileApp,
-  Event,
-  Naming,
-  Music,
-  Graffiti,
-  Literature,
-}
-
 export type ProjectProps = {
-  id: string;
+  section: Section;
   name: string;
   date?: string;
   order?: number;
   description?: string;
   content?: React.ReactNode;
   shortDesc?: string;
-  tags?: Category[];
-  thumbnail: string;
+  tags?: (ProjectType | string)[];
   assets: string[];
-  className?: string;
-};
-
-export type CategoryType = {
-  name: string;
-  color: string;
-  value: Category;
-};
+} & ComponentType;

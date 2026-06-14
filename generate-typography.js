@@ -9,6 +9,7 @@ const generateTypography = ({ addComponents }) => {
     },
     ".label-m": {
       ["font-family"]: "Montserrat",
+      ["font-weight"]: "600",
       ["font-size"]: `16px`,
     },
     ".label": {
@@ -18,6 +19,11 @@ const generateTypography = ({ addComponents }) => {
     ".label-3xl": {
       ["font-family"]: "Montserrat",
       ["font-size"]: `32px`,
+    },
+    ".title-3xl": {
+      ["font-family"]: "Montserrat",
+      ["font-weight"]: "700",
+      ["font-size"]: "64px",
     },
     ".title-2xl": {
       ["font-family"]: "Montserrat",

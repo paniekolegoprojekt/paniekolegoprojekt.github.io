@@ -1,32 +1,28 @@
 import { Text } from "atoms";
 
-const Hero = () => {
-  return (
-    <div className="h-screen overflow-hidden relative">
+export const Hero = () => (
+  <div className="h-screen overflow-hidden relative">
+    <video
+      className="absolute inset-0 w-full h-full object-cover block scale-[1.01]"
+      src="shared/herovideo1.mp4"
+      autoPlay
+      controls={false}
+      muted
+      loop
+    />
+    <div className="absolute flex w-full justify-between px-6 py-4">
       <img
         src="shared/logo.svg"
         alt="logo"
         width={200}
         height={200}
-        className="lg:h-30 h-32 ml-0 lg:ml-12 absolute mt-12 z-20 animate-fadeIn"
+        className="animate-fadeIn"
       />
-      <video
-        className="absolute inset-0 w-full object-cover h-screen"
-        src="shared/herovideo1.mp4"
-        autoPlay={true}
-        controls={false}
-        muted={true}
-        loop
-      />
-      <div className="absolute inset-0 m-auto w-[300px] h-20 text-center bottom-0 mb-0 animate-fadeIn">
-        <Text className="paragraph-xl " text="Eryk Rozdolski" />
-        <Text
-          className="paragraph-m text-ui-primary-grey"
-          text="projektant / software developer"
-        />
+      <div className="flex gap-2">
+        <Text className="paragraph-xl " text="PL" />
+        <Text className="paragraph-xl " text="|" />
+        <Text className="paragraph-xl " text="EN" />
       </div>
     </div>
-  );
-};
-
-export default Hero;
+  </div>
+);

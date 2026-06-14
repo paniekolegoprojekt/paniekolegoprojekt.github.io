@@ -1,4 +1,4 @@
-export type CarouselProps = {
-  children: React.ReactNode;
-  className?: string;
-};
+import { ComponentType } from "@/ui/types";
+import { PropsWithChildren } from "react";
+
+export type CarouselProps = PropsWithChildren & ComponentType;

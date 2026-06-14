@@ -1,12 +1,4 @@
-import { Filters } from "@/ui/molecules";
-import { CategoryType } from "@/ui/types";
-import { useState } from "react";
-import { projects } from "../../../const";
-import { ProjectList } from "../ProjectList/ProjectList";
-
-export const ProjectSection = () => {
-  const [selectedCategory, setCategory] = useState<CategoryType | undefined>();
-
+export const Section = () => {
   return (
     <div className="w-full m-auto bg-ui-light-grey py-4 lg:py-8" id="projects">
       <div className="md:max-w-[1000px] w-full m-auto ">
@@ -22,17 +14,6 @@ export const ProjectSection = () => {
           >
             [erykrozdolski@gmail.com]
           </a>
-          <Filters
-            setCategory={setCategory}
-            selectedCategory={selectedCategory}
-          />
-          <div className="col-span-12 grid grid-cols-12 gap-2 xl:gap-4">
-            <ProjectList
-              cards={projects}
-              setCategory={setCategory}
-              selectedCategory={selectedCategory}
-            />
-          </div>
         </div>
       </div>
     </div>
