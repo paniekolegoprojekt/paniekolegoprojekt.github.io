@@ -9,7 +9,7 @@ import {
   ArrowRightCircleIcon,
 } from "@heroicons/react/16/solid";
 
-export const Carousel = ({ children, className }: CarouselProps) => {
+export const Carousel = ({ children, className, style }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     dragFree: false,
     loop: true,
@@ -24,8 +24,15 @@ export const Carousel = ({ children, className }: CarouselProps) => {
   } = usePrevNextButtons(emblaApi);
 
   return React.Children.count(children) > 1 ? (
-    <div className={twMerge("flex w-full bg-white", className)}>
-      <ArrowBtn onClick={onPrevButtonClick} disabled={prevBtnDisabled}>
+    <div
+      className={twMerge("flex w-full bg-white relative", className)}
+      style={style}
+    >
+      <ArrowBtn
+        onClick={onPrevButtonClick}
+        disabled={prevBtnDisabled}
+        className="bg-[linear-gradient(to_left,rgba(255,0,0,0),rgba(0,0,0,0.25))]"
+      >
         <ArrowLeftCircleIcon className="h-8" />
       </ArrowBtn>
       <div className="overflow-hidden" ref={emblaRef}>
@@ -36,7 +43,7 @@ export const Carousel = ({ children, className }: CarouselProps) => {
       <ArrowBtn
         onClick={onNextButtonClick}
         disabled={nextBtnDisabled}
-        className="right-0"
+        className="right-0 bg-[linear-gradient(to_right,rgba(255,0,0,0),rgba(0,0,0,0.25))]"
       >
         <ArrowRightCircleIcon className="h-8" />
       </ArrowBtn>

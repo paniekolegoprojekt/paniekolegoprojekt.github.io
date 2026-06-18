@@ -4,15 +4,15 @@ import * as Accordion from "@radix-ui/react-accordion";
 import parse from "html-react-parser";
 import { Carousel } from "@/ui/molecules";
 import { Media } from "@/ui/molecules/Media/Media";
-import { ProjectProps } from "@/ui/types";
 import { ArrowDownCircleIcon } from "@heroicons/react/16/solid";
 import { twMerge } from "tailwind-merge";
+import { t } from "i18next";
+import { projects } from "@/const/const";
 
 export type SectionProps = {
   title: string;
   color: string;
-  desc: string | React.ReactNode;
-  projects: ProjectProps[];
+  bgUrl?: string;
 };
 
 export const Section = ({
@@ -22,50 +22,66 @@ export const Section = ({
   section: SectionProps;
   index: number;
 }) => {
-  const { title, projects, desc, color } = { ...section };
+  const { title, color, bgUrl } = { ...section };
   return (
     <div
       id={title}
-      className="grid grid-cols-2 gap-16 h-fit my-16 py-8"
+      className="grid grid-cols-12 gap-4 xl:gap-16 h-fit my-8 xl:my-16 py-0 xl:py-8"
       style={{ "--section-color": color } as React.CSSProperties}
     >
-      <div className="grid gap-4 h-fit">
-        <Text text={title} className="title-3xl uppercase" />
-        <Text text={desc} className="paragraph-m text-justify" />
-        <Accordion.Root className="grid gap-4" type="multiple">
-          {projects.map((project) => (
-            <Accordion.Item className={""} value={project.name}>
-              <Accordion.Trigger
-                className={twMerge(
-                  "hover:bg-[--section-color] hover:text-white ease-in-out transition-all group flex px-3 py-4 rounded-md border w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none",
-                )}
-                style={{ borderColor: color }}
-              >
-                <div className="flex gap-3">
-                  <Text
-                    text={project.name}
-                    className="title-s uppercase group-data-[state=open]:text-white text-[--section-color] group-hover:text-white transition-all ease-in-out"
-                  />
-                  <Text
-                    text={String(project.tags?.[0])}
-                    className="uppercase label-m transition-all ease-in-out"
-                  />
-                </div>
-                <div className="flex gap-3">
-                  <Text
-                    text={String(project.date)}
-                    className="label-m whitespace-nowrap"
-                  />
-                  <ArrowDownCircleIcon className="h-5" />
-                </div>
-              </Accordion.Trigger>
+      <div className="grid gap-4 h-fit col-span-12 xl:col-span-6">
+        <div className="flex">
+          <Text text={title} className="title-m xl:title-3xl uppercase" />
+        </div>
+        <Text
+          text={parse(t(title))}
+          className="paragraph-s xl:paragraph-m text-justify"
+        />
+        <Accordion.Root className="grid gap-2 xl:gap-4" type="multiple">
+          {projects
+            .filter((project) => project.section === title)
+            .map((project) => (
+              <Accordion.Item className={""} value={project.name}>
+                <Accordion.Trigger
+                  className={twMerge(
+                    "hover:bg-[--section-color] hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none",
+                  )}
+                  style={{ borderColor: color }}
+                >
+                  <div className="flex gap-3">
+                    <Text
+                      text={project.name}
+                      className="title-xs xl:title-s uppercase group-data-[state=open]:text-white text-[--section-color] group-hover:text-white transition-all ease-in-out"
+                    />
+                    <Text
+                      text={String(project.tags?.[0])}
+                      className="uppercase label-s xl:label-m transition-all ease-in-out"
+                    />
+                  </div>
+                  <div className="flex gap-3">
+                    <Text
+                      text={String(project.date)}
+                      className="label-s xl:label-m whitespace-nowrap"
+                    />
+                    <ArrowDownCircleIcon className="h-5" />
+                  </div>
+                </Accordion.Trigger>
 
-              <Accordion.Content
-                className="bg-ui-light-grey border data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown overflow-hidden"
-                style={{ borderColor: color }}
-              >
-                <div className="px-6 py-4 grid gap-4">
-                  <Carousel className="">
+                <Accordion.Content
+                  className="bg-ui-light-grey border data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown overflow-hidden"
+                  style={
+                    {
+                      "--carousel-bg": project?.bgColor,
+                      borderColor: color,
+                    } as React.CSSProperties
+                  }
+                >
+                  <Carousel
+                    className={twMerge(
+                      "w-full h-[300px] xl:h-[500px] bg-[--carousel-bg]",
+                      !project.bgColor && "bg-white",
+                    )}
+                  >
                     {project.assets?.map((url) => (
                       <Media
                         url={url}
@@ -73,35 +89,46 @@ export const Section = ({
                       />
                     ))}
                   </Carousel>
-                  <div className="grid gap-4">
-                    <Text
-                      text={`${project?.name} / ${project.date}`}
-                      className="title-s uppercase"
-                    />
-                    {project.description && (
+                  <div className="p-4 xl:p-6 grid gap-2 xl:gap-4">
+                    <div className="grid gap-4">
+                      <Text
+                        text={`${project?.name} / ${project.date}`}
+                        className="title-xs xl:title-s uppercase"
+                      />
                       <div className="xl:paragraph-m paragraph-xs text-ui-dark">
-                        {parse(project.description)}
+                        {parse(t(project.name))}
                       </div>
-                    )}
-                    <div className="flex gap-2">
-                      {project?.tags?.map((tag) => (
-                        <Text text={`#${tag}`} />
-                      ))}
+                      <div className="flex gap-2">
+                        {project?.tags?.map((tag) => (
+                          <Text text={`#${tag}`} />
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Accordion.Content>
-            </Accordion.Item>
-          ))}
+                </Accordion.Content>
+              </Accordion.Item>
+            ))}
         </Accordion.Root>
       </div>
       <div
         className={twMerge(
-          "aspect-square w-100",
+          "aspect-square w-100 hidden xl:block xl:relative xl:sticky top-12 col-span-2 xl:col-span-6",
           index % 2 == 1 && "order-first",
         )}
-        style={{ backgroundColor: color }}
-      ></div>
+      >
+        <span
+          className="absolute w-full h-full opacity-80 z-10"
+          style={{ backgroundColor: color }}
+        />
+        <img
+          className={twMerge("w-full", "grayscale")}
+          src={bgUrl}
+          alt={bgUrl}
+          width="1600"
+          height="900"
+          loading="eager"
+        />
+      </div>
     </div>
   );
 };

@@ -12,9 +12,19 @@ export const Media = ({ url, className }: MediaProps) => (
     >
       {url.includes("youtube") ? (
         <VideoPlayer src={url} />
-      ) : (
-        <img src={url} alt={url} width="1600" height="900" loading="eager" />
-      )}
+      ) : url ? (
+        <img
+          className={twMerge(
+            "max-h-[75vh] xl:max-h-auto w-full object-cover",
+            className,
+          )}
+          src={url}
+          alt={url}
+          width="1600"
+          height="900"
+          loading="eager"
+        />
+      ) : null}
     </div>
   </div>
 );
