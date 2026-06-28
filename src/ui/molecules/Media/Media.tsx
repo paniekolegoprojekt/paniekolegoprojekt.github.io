@@ -1,10 +1,21 @@
 import { VideoPlayer } from "@/ui/atoms";
 import { MediaProps } from "./types";
 import { twMerge } from "tailwind-merge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ArrowPathIcon } from "@heroicons/react/16/solid";
+
+const useImage = (src: string) => {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => setLoaded(true);
+  }, [src]);
+  return loaded;
+};
 
 export const Media = ({ url, className }: MediaProps) => {
-  const [loaded, setLoaded] = useState(false);
+  const loaded = useImage(url);
   return (
     <div className="self-center items-center justify-center ease-in-out transition-all animate-fadeIn">
       <div
@@ -12,10 +23,9 @@ export const Media = ({ url, className }: MediaProps) => {
       >
         {url.includes("youtube") ? (
           <VideoPlayer src={url} />
-        ) : url ? (
+        ) : loaded ? (
           <img
             style={{ opacity: loaded ? 1 : 0.5 }}
-            onLoad={() => setLoaded(true)}
             className={twMerge(
               "xl:max-h-auto w-full object-cover ease-in-out transition-all animate-fadeIn",
               className,
@@ -26,7 +36,11 @@ export const Media = ({ url, className }: MediaProps) => {
             height="900"
             loading="eager"
           />
-        ) : null}
+        ) : (
+          <div className="flex justify-center content-center">
+            <ArrowPathIcon className="animate-spin h-3 w-3" />
+          </div>
+        )}
       </div>
     </div>
   );
