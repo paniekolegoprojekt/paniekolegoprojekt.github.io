@@ -12,20 +12,20 @@ export const HomePage = () => {
   return (
     <main className="bg-ui-polar lg:gap-4 gap-0">
       <Hero />
-      <div className="w-full my-6 xl:w-[1200px] grid ml-auto mr-auto xl:my-16 xl:px-0 px-6">
+      <div className="w-full my-6 xl:w-[1200px] grid ml-auto mr-auto xl:my-16 xl:px-0 px-4">
         <div className="grid grid-cols-1 xl:grid-cols-2 w-full gap-8 xl:gap-16 h-fit mb-8">
           <div className="grid gap-2 xl:gap-6 h-fit">
             <Text text="Portfolio" className="title-m xl:title-xl" />
             <div className="grid gap-2 xl:gap-4">
               {sections?.map(({ title, color }) => (
                 <a
-                  className="rounded-md w-full text-white px-2 py-1 xl:px-4 xl:py-3 justify-between flex hover:ml-4 ml-0 transition-all ease-in-out"
+                  className="rounded-md w-full text-white px-2 py-1 xl:px-4 xl:py-3 justify-between flex lg:hover:ml-4 ml-0 transition-all ease-in-out"
                   style={{ backgroundColor: color }}
                   href={`#${title}`}
                 >
                   <Text
                     text={title}
-                    className="uppercase title-xs xl:title-s content-center"
+                    className="uppercase title-xxs xl:title-s content-center"
                   />
                   <ChevronRightIcon className="h-8" />
                 </a>
@@ -50,7 +50,7 @@ export const HomePage = () => {
             <Text className="title-l" text={t("contact")} />
             <Text className="label-l" text={t("contact_text")} />
             <Text
-              className="paragraph-xl uppercase"
+              className="paragraph-s xl:paragraph-xl uppercase"
               text="erykrozdolski@gmail.com"
             />
             <Text

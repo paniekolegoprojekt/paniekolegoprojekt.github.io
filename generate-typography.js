@@ -65,6 +65,12 @@ const generateTypography = ({ addComponents }) => {
       ["font-size"]: "14px",
     },
 
+    ".title-xxs": {
+      ["font-family"]: "Montserrat",
+      ["font-weight"]: "700",
+      ["font-size"]: "12px",
+    },
+
     ".paragraph-xl": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "24px",

@@ -21,6 +21,8 @@ a {
 }
 
 .travcorp-section img,
-.power-media-section img {
+.travcorp-section .media-box,
+.power-media-section img,
+.power-media-section .media-box {
   height: 10rem;
 }

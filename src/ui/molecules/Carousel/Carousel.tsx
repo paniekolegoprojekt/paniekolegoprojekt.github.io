@@ -25,7 +25,7 @@ export const Carousel = ({ children, className, style }: CarouselProps) => {
 
   return React.Children.count(children) > 1 ? (
     <div
-      className={twMerge("flex w-full bg-black relative", className)}
+      className={twMerge("flex w-full bg-white relative", className)}
       style={style}
     >
       <ArrowBtn

@@ -30,7 +30,25 @@ export const Section = ({
       style={{ "--section-color": color } as React.CSSProperties}
     >
       <div className="grid gap-4 h-fit col-span-12 xl:col-span-6">
-        <div className="flex">
+        <div className="flex items-center gap-4 xl:gap-0">
+          <div
+            className={twMerge(
+              "aspect-square w-[100px] flex relative xl:hidden",
+            )}
+          >
+            <span
+              className="absolute w-full h-full opacity-80 z-10"
+              style={{ backgroundColor: color }}
+            />
+            <img
+              className={twMerge("w-full", "grayscale")}
+              src={bgUrl}
+              alt={bgUrl}
+              width="1600"
+              height="900"
+              loading="eager"
+            />
+          </div>
           <Text text={title} className="title-m xl:title-3xl uppercase" />
         </div>
         <Text
@@ -51,14 +69,14 @@ export const Section = ({
                   )}
                   style={{ borderColor: color }}
                 >
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 items-center">
                     <Text
                       text={project.name}
-                      className="title-xs xl:title-s uppercase group-data-[state=open]:text-white text-[--section-color] group-hover:text-white transition-all ease-in-out"
+                      className="title-xxs xl:title-s uppercase group-data-[state=open]:text-white text-[--section-color] group-hover:text-white transition-all ease-in-out"
                     />
                     <Text
                       text={String(project.tags?.[0])}
-                      className="uppercase label-s xl:label-m transition-all ease-in-out"
+                      className="uppercase hidden xL:block label-s xl:label-m transition-all ease-in-out"
                     />
                   </div>
                   <div className="flex gap-3">
@@ -82,14 +100,13 @@ export const Section = ({
                   <Carousel
                     className={twMerge(
                       "w-full bg-[--carousel-bg]",
-                      !project.bgColor && "bg-black",
+                      !project.bgColor && "bg-white",
                     )}
                   >
                     {project.assets?.map((url) => (
-                      <Media
-                        url={url}
-                        className="data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown"
-                      />
+                      <div className="aspect-square h-fit media-box content-center">
+                        <Media url={url} />
+                      </div>
                     ))}
                   </Carousel>
                   <div className="p-4 xl:p-6 grid gap-2 xl:gap-4">
@@ -104,7 +121,7 @@ export const Section = ({
                       <div className="flex gap-2">
                         {project?.tags?.map((tag) => (
                           <Text
-                            className="lowercase opacity-50"
+                            className="lowercase opacity-50 label-s xl:label-m"
                             text={`#${tag}`}
                           />
                         ))}
