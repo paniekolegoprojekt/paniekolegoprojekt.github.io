@@ -55,7 +55,7 @@ export const HomePage = () => {
             />
             <Text
               className="paragraph-xs uppercase"
-              text="Copyright Panie Kolego Projekt 2026"
+              text={`Copyrights by Panie Kolego Projekt ${new Date().getFullYear()}`}
             />
           </div>
         </div>

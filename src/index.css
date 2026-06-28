@@ -15,3 +15,12 @@ video:focus {
 video {
   outline: none;
 }
+
+a {
+  color: #3b4d81;
+}
+
+.travcorp-section img,
+.power-media-section img {
+  height: 10rem;
+}

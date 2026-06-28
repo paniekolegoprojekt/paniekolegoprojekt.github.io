@@ -2,6 +2,7 @@ import { LangSwitch } from "@/ui/molecules/LangSwitch/LangSwitch";
 
 export const Hero = () => (
   <div className="h-screen relative flex justify-center">
+    <div className="bg-white absolute bottom-0 w-full h-4 z-10" />
     <video
       className="absolute inset-0 w-full h-full object-cover block"
       src="shared/hero.mp4"

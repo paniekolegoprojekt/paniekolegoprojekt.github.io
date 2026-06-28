@@ -13,7 +13,7 @@ export const VideoPlayer = ({
     <iframe
       width="100%"
       height="315"
-      className={twMerge("aspect-video", className)}
+      className={twMerge("aspect-square", className)}
       src={src}
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

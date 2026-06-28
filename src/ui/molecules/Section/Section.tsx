@@ -41,7 +41,10 @@ export const Section = ({
           {projects
             .filter((project) => project.section === title)
             .map((project) => (
-              <Accordion.Item className={""} value={project.name}>
+              <Accordion.Item
+                className={project.className ?? ""}
+                value={project.name}
+              >
                 <Accordion.Trigger
                   className={twMerge(
                     "hover:bg-[--section-color] hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none",
@@ -78,8 +81,8 @@ export const Section = ({
                 >
                   <Carousel
                     className={twMerge(
-                      "w-full h-[300px] xl:h-[500px] bg-[--carousel-bg]",
-                      !project.bgColor && "bg-white",
+                      "w-full bg-[--carousel-bg]",
+                      !project.bgColor && "bg-black",
                     )}
                   >
                     {project.assets?.map((url) => (
@@ -95,12 +98,15 @@ export const Section = ({
                         text={`${project?.name} / ${project.date}`}
                         className="title-xs xl:title-s uppercase"
                       />
-                      <div className="xl:paragraph-m paragraph-xs text-ui-dark">
+                      <div className="xl:paragraph-m paragraph-s text-ui-dark">
                         {parse(t(project.name))}
                       </div>
                       <div className="flex gap-2">
                         {project?.tags?.map((tag) => (
-                          <Text text={`#${tag}`} />
+                          <Text
+                            className="lowercase opacity-50"
+                            text={`#${tag}`}
+                          />
                         ))}
                       </div>
                     </div>

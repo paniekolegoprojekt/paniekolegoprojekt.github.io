@@ -14,10 +14,7 @@ export const Media = ({ url, className }: MediaProps) => (
         <VideoPlayer src={url} />
       ) : url ? (
         <img
-          className={twMerge(
-            "max-h-[75vh] xl:max-h-auto w-full object-cover",
-            className,
-          )}
+          className={twMerge("xl:max-h-auto w-full object-cover", className)}
           src={url}
           alt={url}
           width="1600"
