@@ -37,8 +37,8 @@ export const Media = ({ url, className }: MediaProps) => {
           />
         )}
         {!loaded && !isVideo && (
-          <div className="flex justify-center content-center">
-            <ArrowPathIcon className="animate-spin h-3 w-3" />
+          <div className="flex justify-center content-center w-full h-auto aspect-square items-center">
+            <ArrowPathIcon className="animate-spin h-8 w-8 text-ui-primary-grey" />
           </div>
         )}
       </div>

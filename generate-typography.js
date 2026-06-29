@@ -16,6 +16,10 @@ const generateTypography = ({ addComponents }) => {
       ["font-family"]: "Montserrat",
       ["font-size"]: `18px`,
     },
+    ".label-l": {
+      ["font-family"]: "Montserrat",
+      ["font-size"]: `20px`,
+    },
     ".label-3xl": {
       ["font-family"]: "Montserrat",
       ["font-size"]: `32px`,
@@ -74,24 +78,29 @@ const generateTypography = ({ addComponents }) => {
     ".paragraph-xl": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "24px",
+      ["font-weight"]: "450",
     },
 
     ".paragraph-l": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "18px",
+      ["font-weight"]: "450",
     },
 
     ".paragraph-m": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "16px",
+      ["font-weight"]: "450",
     },
     ".paragraph-s": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "14px",
+      ["font-weight"]: "450",
     },
     ".paragraph-xs": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "12px",
+      ["font-weight"]: "450",
     },
   };
 

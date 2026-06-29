@@ -25,7 +25,7 @@ export const HomePage = () => {
                 >
                   <Text
                     text={title}
-                    className="uppercase title-xxs xl:title-s content-center"
+                    className="uppercase title-s xl:title-s content-center"
                   />
                   <ChevronRightIcon className="h-8" />
                 </a>

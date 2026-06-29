@@ -33,9 +33,11 @@ export const Carousel = ({ children, className, style }: CarouselProps) => {
         disabled={prevBtnDisabled}
         className="bg-[linear-gradient(to_left,rgba(255,0,0,0),rgba(0,0,0,0.25))]"
       >
-        <ArrowLeftCircleIcon className="h-8" />
+        <ArrowLeftCircleIcon
+          className={twMerge("h-8", "fill-[--section-color]")}
+        />
       </ArrowBtn>
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="overflow-hidden w-full" ref={emblaRef}>
         <div className="grid grid-flow-col" style={{ gridAutoColumns: "100%" }}>
           {children}
         </div>
@@ -45,7 +47,9 @@ export const Carousel = ({ children, className, style }: CarouselProps) => {
         disabled={nextBtnDisabled}
         className="right-0 bg-[linear-gradient(to_right,rgba(255,0,0,0),rgba(0,0,0,0.25))]"
       >
-        <ArrowRightCircleIcon className="h-8" />
+        <ArrowRightCircleIcon
+          className={twMerge("h-8", "fill-[--section-color]")}
+        />
       </ArrowBtn>
     </div>
   ) : (

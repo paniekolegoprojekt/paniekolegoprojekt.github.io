@@ -53,7 +53,7 @@ export const Section = ({
         </div>
         <Text
           text={parse(t(title))}
-          className="paragraph-s xl:paragraph-m text-justify"
+          className="paragraph-m xxl:paragraph-l text-justify"
         />
         <Accordion.Root className="grid gap-2 xl:gap-4" type="multiple">
           {projects
@@ -72,7 +72,7 @@ export const Section = ({
                   <div className="flex gap-3 items-center">
                     <Text
                       text={project.name}
-                      className="title-xxs xl:title-s uppercase group-data-[state=open]:text-white text-[--section-color] group-hover:text-white transition-all ease-in-out"
+                      className="title-xs xl:title-s uppercase group-data-[state=open]:text-white text-[--section-color] group-hover:text-white transition-all ease-in-out"
                     />
                     <Text
                       text={String(project.tags?.[0])}
@@ -99,7 +99,7 @@ export const Section = ({
                 >
                   <Carousel
                     className={twMerge(
-                      "w-full bg-[--carousel-bg]",
+                      "w-full bg-[--carousel-bg] h-auto aspect-square",
                       !project.bgColor && "bg-white",
                     )}
                   >
@@ -113,7 +113,7 @@ export const Section = ({
                     <div className="grid gap-4">
                       <Text
                         text={`${project?.name} / ${project.date}`}
-                        className="title-xs xl:title-s uppercase"
+                        className="title-s uppercase"
                       />
                       <div className="xl:paragraph-m paragraph-s text-ui-dark">
                         {parse(t(project.name))}
@@ -121,7 +121,7 @@ export const Section = ({
                       <div className="flex gap-2">
                         {project?.tags?.map((tag) => (
                           <Text
-                            className="lowercase opacity-50 paragraph-s"
+                            className="lowercase opacity-50 paragraph-s xl:paragraph-m"
                             text={`#${tag}`}
                           />
                         ))}
