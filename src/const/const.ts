@@ -53,6 +53,7 @@ export const projects: ProjectProps[] = [
       "/images/szablony/3.jpg",
       "/images/szablony/4.jpg",
       "/images/szablony/5.jpg",
+      "https://www.youtube.com/embed/p6aZ3A-bI8w?si=i2V8-v5qP-dkl3nL",
     ],
   },
   {
@@ -172,6 +173,7 @@ export const projects: ProjectProps[] = [
     date: "2022",
     assets: [
       "/images/starszysyny/2.png",
+      "https://www.youtube.com/embed/mV48BrIWMV0?si=647G-BpwORHj1BCi",
       "https://www.youtube.com/embed/yNHWXxynUvs?si=CzwmKeGxdf3WiGVe",
       "https://www.youtube.com/embed/eSEA0T1byN0?si=ZdCw11WU-JnKKoE_",
     ],
@@ -280,9 +282,10 @@ export const projects: ProjectProps[] = [
   {
     section: Section.Art,
     name: "garbate lemury",
-    date: "2017",
+    date: "2010-2025",
     assets: [
       "https://www.youtube.com/embed/pQSvhxqT9i4?si=NOUgw67O6_UaUqt2",
+      "https://www.youtube.com/embed/1_OhXSdOF8M?si=0mTSbqcD0KdNd6KT",
       "/images/garbate_lemury/1.jpg",
       "/images/garbate_lemury/2.jpg",
       "/images/garbate_lemury/3.jpg",

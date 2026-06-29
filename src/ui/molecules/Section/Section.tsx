@@ -121,7 +121,7 @@ export const Section = ({
                       <div className="flex gap-2">
                         {project?.tags?.map((tag) => (
                           <Text
-                            className="lowercase opacity-50 label-s xl:label-m"
+                            className="lowercase opacity-50 paragraph-s"
                             text={`#${tag}`}
                           />
                         ))}
@@ -135,7 +135,7 @@ export const Section = ({
       </div>
       <div
         className={twMerge(
-          "aspect-square w-100 hidden xl:block xl:relative xl:sticky top-12 col-span-2 xl:col-span-6",
+          "aspect-square w-100 hidden xl:block xl:sticky top-12 col-span-2 xl:col-span-6",
           index % 2 == 1 && "order-first",
         )}
       >

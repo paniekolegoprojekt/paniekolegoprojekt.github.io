@@ -16,16 +16,15 @@ const useImage = (src: string) => {
 
 export const Media = ({ url, className }: MediaProps) => {
   const loaded = useImage(url);
+  const isVideo = url.includes("youtube");
   return (
     <div className="self-center items-center justify-center ease-in-out transition-all animate-fadeIn">
       <div
         className={twMerge("grid grid-flow-col auto-cols-1-slides", className)}
       >
-        {url.includes("youtube") ? (
-          <VideoPlayer src={url} />
-        ) : loaded ? (
+        {isVideo && <VideoPlayer src={url} />}
+        {!isVideo && loaded && (
           <img
-            style={{ opacity: loaded ? 1 : 0.5 }}
             className={twMerge(
               "xl:max-h-auto w-full object-cover ease-in-out transition-all animate-fadeIn",
               className,
@@ -36,7 +35,8 @@ export const Media = ({ url, className }: MediaProps) => {
             height="900"
             loading="eager"
           />
-        ) : (
+        )}
+        {!loaded && !isVideo && (
           <div className="flex justify-center content-center">
             <ArrowPathIcon className="animate-spin h-3 w-3" />
           </div>
