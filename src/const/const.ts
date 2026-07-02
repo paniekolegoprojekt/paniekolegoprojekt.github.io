@@ -228,7 +228,7 @@ export const projects: ProjectProps[] = [
     name: "ADS Green",
     date: "2020.04",
     assets: [
-      "/images/ads_green/_1.jpg",
+      "/images/ads_green/logo.jpg",
       "/images/ads_green/5.jpg",
       "/images/ads_green/1.jpg",
       "/images/ads_green/2.jpg",

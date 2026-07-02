@@ -20,6 +20,7 @@ export const Hero = () => (
           width={200}
           height={200}
           className="animate-fadeIn -ml-8 xl:-ml-6"
+          loading="eager"
         />
         <LangSwitch />
       </div>
