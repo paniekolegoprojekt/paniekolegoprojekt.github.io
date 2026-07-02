@@ -21,7 +21,7 @@ export const LangSwitch = () => {
   );
 
   return (
-    <div className="flex gap-2 h-fit ce content-center">
+    <div className="flex gap-2 h-fit content-center">
       <LangBtn lang="pl" />
       <Text className="paragraph-xl " text="|" />
       <LangBtn lang="en" />

@@ -8,6 +8,7 @@ export const Hero = () => (
       src="shared/hero.mp4"
       autoPlay
       controls={false}
+      preload="auto"
       muted
       loop
     />

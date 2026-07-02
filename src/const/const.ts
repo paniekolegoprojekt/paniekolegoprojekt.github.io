@@ -1,4 +1,4 @@
-import { SectionProps } from "@/ui/molecules/Section/Section";
+import { SectionProps } from "@/ui/molecules/Section/types";
 import { ProjectProps } from "../ui/types";
 
 export enum Section {

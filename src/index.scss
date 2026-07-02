@@ -20,9 +20,11 @@ a {
   color: #3b4d81;
 }
 
-.travcorp-section img,
-.travcorp-section .media-box,
-.power-media-section img,
-.power-media-section .media-box {
-  height: 10rem;
+.travcorp-section,
+.power-media-section {
+  .media-box,
+  .carousel-box,
+  img {
+    height: 10rem;
+  }
 }

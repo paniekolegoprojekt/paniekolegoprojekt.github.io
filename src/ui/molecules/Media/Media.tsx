@@ -1,18 +1,8 @@
-import { VideoPlayer } from "@/ui/atoms";
+import { VideoPlayer } from "atoms";
 import { MediaProps } from "./types";
 import { twMerge } from "tailwind-merge";
-import { useState, useEffect } from "react";
 import { ArrowPathIcon } from "@heroicons/react/16/solid";
-
-const useImage = (src: string) => {
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => setLoaded(true);
-  }, [src]);
-  return loaded;
-};
+import { useImage } from "@/hooks/useImage";
 
 export const Media = ({ url, className }: MediaProps) => {
   const loaded = useImage(url);
@@ -23,17 +13,17 @@ export const Media = ({ url, className }: MediaProps) => {
         className={twMerge("grid grid-flow-col auto-cols-1-slides", className)}
       >
         {isVideo && <VideoPlayer src={url} />}
-        {!isVideo && loaded && (
+        {!isVideo && (
           <img
             className={twMerge(
               "xl:max-h-auto w-full object-cover ease-in-out transition-all animate-fadeIn",
               className,
+              loaded ? "opacity-100" : "opacity-0",
             )}
             src={url}
             alt={url}
             width="900"
             height="900"
-            loading="eager"
           />
         )}
         {!loaded && !isVideo && (

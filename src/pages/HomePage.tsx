@@ -14,11 +14,12 @@ export const HomePage = () => {
       <Hero />
       <div className="w-full my-6 xl:w-[1200px] grid ml-auto mr-auto xl:my-16 xl:px-0 px-4">
         <div className="grid grid-cols-1 xl:grid-cols-2 w-full gap-8 xl:gap-16 h-fit mb-8">
-          <div className="grid gap-2 xl:gap-6 h-fit">
+          <div className="grid gap-2 xl:gap-6 h-fit order-first ">
             <Text text="Portfolio" className="title-m xl:title-xl" />
             <div className="grid gap-2 xl:gap-4">
               {sections?.map(({ title, color }) => (
                 <a
+                  key={title}
                   className="rounded-md w-full text-white px-2 py-1 xl:px-4 xl:py-3 justify-between flex lg:hover:ml-4 ml-0 transition-all ease-in-out"
                   style={{ backgroundColor: color }}
                   href={`#${title}`}
@@ -33,7 +34,7 @@ export const HomePage = () => {
             </div>
           </div>
           <div className="grid gap-6 max-xl:order-first">
-            <Text text={t("about_me_text")} className="title-xl" />
+            <Text text={t("about_me_text")} className="title-m xl:title-xl" />
             <div className="paragraph-m text-justify">
               <p className="">{parse(t("about_me.1"))}</p>
               <p className="mt-4">{parse(t("about_me.2"))}</p>
@@ -43,7 +44,7 @@ export const HomePage = () => {
           </div>
         </div>
         {sections?.map((section, index) => (
-          <Section section={section} index={index} />
+          <Section key={section.title} section={section} index={index} />
         ))}
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-4 xl:gap-16 h-fit xl:my-16 my-4">
           <div className="grid gap-3">
