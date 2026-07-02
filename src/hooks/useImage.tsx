@@ -6,10 +6,7 @@ export const useImage = (src: string) => {
   useEffect(() => {
     const img = new Image();
     img.src = src;
-    img.onload = () => {
-      console.log("Image loaded:", src);
-      setLoaded(true);
-    };
+    img.onload = () => setLoaded(true);
   }, [src]);
   return loaded;
 };

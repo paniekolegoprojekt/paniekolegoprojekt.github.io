@@ -4,10 +4,8 @@ import { twMerge } from "tailwind-merge";
 import React from "react";
 import { ArrowBtn } from "./blocks/ArrowBtn/ArrowBtn";
 import { usePrevNextButtons } from "./uitls/usePrevNextButtons";
-import {
-  ArrowLeftCircleIcon,
-  ArrowRightCircleIcon,
-} from "@heroicons/react/16/solid";
+import ArrowLeftCircleIcon from "@heroicons/react/16/solid/ArrowLeftCircleIcon";
+import ArrowRightCircleIcon from "@heroicons/react/16/solid/ArrowRightCircleIcon";
 
 export const Carousel = ({ children, className, style }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({

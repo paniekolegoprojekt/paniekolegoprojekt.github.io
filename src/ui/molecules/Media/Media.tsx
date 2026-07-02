@@ -1,7 +1,7 @@
 import { VideoPlayer } from "atoms";
 import { MediaProps } from "./types";
 import { twMerge } from "tailwind-merge";
-import { ArrowPathIcon } from "@heroicons/react/16/solid";
+import ArrowPathIcon from "@heroicons/react/16/solid/ArrowPathIcon";
 import { useImage } from "@/hooks/useImage";
 
 export const Media = ({ url, className }: MediaProps) => {
@@ -13,12 +13,11 @@ export const Media = ({ url, className }: MediaProps) => {
         className={twMerge("grid grid-flow-col auto-cols-1-slides", className)}
       >
         {isVideo && <VideoPlayer src={url} />}
-        {!isVideo && (
+        {!isVideo && loaded && (
           <img
             className={twMerge(
               "xl:max-h-auto w-full object-cover ease-in-out transition-all animate-fadeIn",
               className,
-              loaded ? "opacity-100" : "opacity-0",
             )}
             src={url}
             alt={url}

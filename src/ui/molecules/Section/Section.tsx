@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { Text } from "@/ui/atoms";
-import * as Accordion from "@radix-ui/react-accordion";
+import { Accordion } from "@radix-ui/react-accordion";
 import parse from "html-react-parser";
 import { twMerge } from "tailwind-merge";
 import { t } from "i18next";
 import { projects } from "@/const/const";
 import { SectionProps } from "./types";
 import { Project } from "@/ui/organisms/Project/Project";
+import { useImage } from "@/hooks/useImage";
 
 export const Section = ({
   section,
@@ -15,21 +16,26 @@ export const Section = ({
   section: SectionProps;
   index: number;
 }) => {
-  const { title, color, bgUrl } = { ...section };
+  const { title, color, bgUrl = "" } = { ...section };
   const sectionProjects = projects.filter(
     (project) => project.section === title,
   );
 
-  const BgImage = () => (
-    <img
-      className={twMerge("w-full", "grayscale")}
-      src={bgUrl}
-      alt={bgUrl}
-      width="1600"
-      height="900"
-      loading="eager"
-    />
-  );
+  const loaded = useImage(bgUrl);
+
+  const BgImage = () =>
+    loaded && (
+      <img
+        className={twMerge(
+          "w-full grayscale ease-in-out transition-all animate-fadeIn",
+        )}
+        src={bgUrl}
+        alt={bgUrl}
+        width="100"
+        height="100"
+        loading="lazy"
+      />
+    );
 
   useEffect(() => {
     projects.forEach((project) => {
@@ -65,11 +71,11 @@ export const Section = ({
           text={parse(t(title))}
           className="paragraph-m xxl:paragraph-l text-justify"
         />
-        <Accordion.Root className="grid gap-2 xl:gap-4" type="multiple">
+        <Accordion className="grid gap-2 xl:gap-4" type="multiple">
           {sectionProjects.map((project) => (
             <Project key={project.name} {...project} color={color} />
           ))}
-        </Accordion.Root>
+        </Accordion>
       </div>
       <div
         className={twMerge(

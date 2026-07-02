@@ -1,8 +1,12 @@
 import React from "react";
-import * as Accordion from "@radix-ui/react-accordion";
+import {
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@radix-ui/react-accordion";
 import parse from "html-react-parser";
 import { Carousel, Media } from "@/ui/molecules";
-import { ArrowDownCircleIcon } from "@heroicons/react/16/solid";
+import ArrowDownCircleIcon from "@heroicons/react/16/solid/ArrowDownCircleIcon";
 import { ProjectProps } from "@/ui/types";
 import { Text } from "@/ui/atoms";
 import { twMerge } from "tailwind-merge";
@@ -18,8 +22,8 @@ export const Project = ({
   assets,
 }: ProjectProps & { color?: string }) => {
   return (
-    <Accordion.Item key={name} className={className ?? ""} value={name}>
-      <Accordion.Trigger
+    <AccordionItem key={name} className={className ?? ""} value={name}>
+      <AccordionTrigger
         className={twMerge(
           "hover:bg-[--section-color] hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none items-center",
         )}
@@ -42,9 +46,9 @@ export const Project = ({
           />
           <ArrowDownCircleIcon className="h-5" />
         </div>
-      </Accordion.Trigger>
+      </AccordionTrigger>
 
-      <Accordion.Content
+      <AccordionContent
         className="bg-ui-light-grey border data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown overflow-hidden"
         style={
           {
@@ -86,7 +90,7 @@ export const Project = ({
             </div>
           </div>
         </div>
-      </Accordion.Content>
-    </Accordion.Item>
+      </AccordionContent>
+    </AccordionItem>
   );
 };

@@ -244,8 +244,8 @@ export const projects: ProjectProps[] = [
     date: "2019.06",
     assets: [
       "/images/digitape/5.jpg",
-      "/images/digitape/1.jpg",
-      "/images/digitape/2.jpg",
+      "/images/digitape/1.webp",
+      "/images/digitape/2.webp",
       "/images/digitape/3.jpg",
       "/images/digitape/4.jpg",
     ],
@@ -276,7 +276,7 @@ export const projects: ProjectProps[] = [
     section: Section.Software,
     name: "360",
     date: "2016.09",
-    assets: ["/images/360/3.jpg", "/images/360/2.jpg", "/images/360/1.jpg"],
+    assets: ["/images/360/3.webp", "/images/360/2.webp", "/images/360/1.webp"],
     tags: [ProjectType.Mobile, ProjectType.Graphics, "gra casualowa"],
   },
   {
@@ -326,22 +326,22 @@ export const projects: ProjectProps[] = [
 export const sections: SectionProps[] = [
   {
     title: Section.Software,
-    bgUrl: "/images/software_bg.jpg",
+    bgUrl: "/images/software_bg.webp",
     color: "#D78282",
   },
   {
     title: Section.Branding,
-    bgUrl: "/images/branding_bg.jpg",
+    bgUrl: "/images/branding_bg.webp",
     color: "#254B5C",
   },
   {
     title: Section.GraphicDesign,
-    bgUrl: "/images/graphics_bg.jpg",
+    bgUrl: "/images/graphics_bg.webp",
     color: "#3B4D81",
   },
   {
     title: Section.Art,
-    bgUrl: "/images/art_bg.jpg",
+    bgUrl: "/images/art_bg.webp",
     color: "#59C9A5",
   },
 ];
