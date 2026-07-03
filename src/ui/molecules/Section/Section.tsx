@@ -16,24 +16,23 @@ export const Section = ({
   section: SectionProps;
   index: number;
 }) => {
-  const { title, color, bgUrl = "" } = { ...section };
+  const { title, color, bgUrl = "", bgMobileUrl = "" } = { ...section };
   const sectionProjects = projects.filter(
     (project) => project.section === title,
   );
 
   const loaded = useImage(bgUrl);
 
-  const BgImage = () =>
+  const BgImage = ({ url = bgUrl }: { url?: string }) =>
     loaded && (
       <img
         className={twMerge(
-          "w-full grayscale ease-in-out transition-all animate-fadeIn",
+          "w-full grayscale ease-in-out transition-all  animate-scaleIn",
         )}
-        src={bgUrl}
-        alt={bgUrl}
+        src={url}
+        alt={title}
         width="100"
         height="100"
-        loading="lazy"
       />
     );
 
@@ -56,14 +55,14 @@ export const Section = ({
         <div className="flex items-center gap-4 xl:gap-0">
           <div
             className={twMerge(
-              "aspect-square w-[100px] flex relative xl:hidden",
+              "aspect-square w-[100px] flex relative xl:hidden overflow-hidden",
             )}
           >
             <span
               className="absolute w-full h-full opacity-80 z-10"
               style={{ backgroundColor: color }}
             />
-            <BgImage />
+            <BgImage url={bgMobileUrl} />
           </div>
           <Text text={title} className="title-m xl:title-3xl uppercase" />
         </div>
@@ -79,7 +78,7 @@ export const Section = ({
       </div>
       <div
         className={twMerge(
-          "aspect-square w-100 hidden xl:block xl:sticky top-12 col-span-2 xl:col-span-6",
+          "aspect-square w-100 hidden xl:block xl:sticky top-12 col-span-2 xl:col-span-6 overflow-hidden",
           index % 2 == 1 && "order-first",
         )}
       >
@@ -87,7 +86,7 @@ export const Section = ({
           className="absolute w-full h-full opacity-80 z-10"
           style={{ backgroundColor: color }}
         />
-        <BgImage />
+        <BgImage url={bgUrl} />
       </div>
     </div>
   );

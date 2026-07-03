@@ -3,7 +3,7 @@ import { CarouselProps } from "./types";
 import { twMerge } from "tailwind-merge";
 import React from "react";
 import { ArrowBtn } from "./blocks/ArrowBtn/ArrowBtn";
-import { usePrevNextButtons } from "./uitls/usePrevNextButtons";
+import { usePrevNextButtons } from "./utils/usePrevNextButtons";
 import ArrowLeftCircleIcon from "@heroicons/react/16/solid/ArrowLeftCircleIcon";
 import ArrowRightCircleIcon from "@heroicons/react/16/solid/ArrowRightCircleIcon";
 

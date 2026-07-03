@@ -1,8 +1,8 @@
 import { Text } from "@/ui/atoms";
-import { Hero } from "@/ui/organisms/Hero/Hero";
+import { Hero } from "@/ui/organisms";
 import { sections } from "../const/const";
-import { Section } from "@/ui/molecules/Section/Section";
-import { ChevronRightIcon } from "@heroicons/react/16/solid";
+import { Section } from "@/ui/molecules";
+import ChevronRightIcon from "@heroicons/react/16/solid/ChevronRightIcon";
 import { useTranslation } from "react-i18next";
 import parse from "html-react-parser";
 

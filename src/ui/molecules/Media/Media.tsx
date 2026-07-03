@@ -23,7 +23,6 @@ export const Media = ({ url, className }: MediaProps) => {
             alt={url}
             width="900"
             height="900"
-            loading="lazy"
           />
         )}
         {!loaded && !isVideo && (

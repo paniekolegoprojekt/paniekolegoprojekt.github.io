@@ -20,6 +20,7 @@ const config: Config = {
         slideOut: "slideOut 0.75s",
         slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+        scaleIn: "scaleIn 60000ms forwards",
       },
       keyframes: {
         slideDown: {
@@ -41,6 +42,10 @@ const config: Config = {
         slideOut: {
           "0%": { left: "0" },
           "100%": { left: "100%" },
+        },
+        scaleIn: {
+          "0%": { transform: "scale(1.0)" },
+          "100%": { transform: "scale(1.15)" },
         },
       },
       backgroundImage: {

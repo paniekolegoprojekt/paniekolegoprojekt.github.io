@@ -172,7 +172,7 @@ export const projects: ProjectProps[] = [
     name: "starszysyny",
     date: "2022",
     assets: [
-      "/images/starszysyny/2.png",
+      "/images/starszysyny/2.webp",
       "https://www.youtube.com/embed/mV48BrIWMV0?si=647G-BpwORHj1BCi",
       "https://www.youtube.com/embed/yNHWXxynUvs?si=CzwmKeGxdf3WiGVe",
       "https://www.youtube.com/embed/eSEA0T1byN0?si=ZdCw11WU-JnKKoE_",
@@ -327,21 +327,25 @@ export const sections: SectionProps[] = [
   {
     title: Section.Software,
     bgUrl: "/images/software_bg.webp",
+    bgMobileUrl: "/images/software_bg_mobile.webp",
     color: "#D78282",
   },
   {
     title: Section.Branding,
     bgUrl: "/images/branding_bg.webp",
+    bgMobileUrl: "/images/branding_bg_mobile.webp",
     color: "#254B5C",
   },
   {
     title: Section.GraphicDesign,
     bgUrl: "/images/graphics_bg.webp",
+    bgMobileUrl: "/images/graphics_bg_mobile.webp",
     color: "#3B4D81",
   },
   {
     title: Section.Art,
     bgUrl: "/images/art_bg.webp",
+    bgMobileUrl: "/images/art_bg_mobile.webp",
     color: "#59C9A5",
   },
 ];
