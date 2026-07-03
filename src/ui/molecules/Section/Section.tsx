@@ -23,7 +23,7 @@ export const Section = ({
 
   const loaded = useImage(bgUrl);
 
-  const BgImage = ({ url = bgUrl }: { url?: string }) =>
+  const BgImage = ({ url }: { url: string }) =>
     loaded && (
       <img
         className={twMerge(

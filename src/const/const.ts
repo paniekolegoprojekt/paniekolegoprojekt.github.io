@@ -47,13 +47,13 @@ export const projects: ProjectProps[] = [
     bgColor: "#000",
     tags: [ProjectType.Graffiti, ProjectType.Web, "seria murali"],
     assets: [
-      "https://www.youtube.com/embed/IdWoyn_0f7M?si=EvosHacTT-itmDuS&amp;amp;controls=0",
+      "https://www.youtube-nocookie.com/embed/IdWoyn_0f7M?si=EvosHacTT-itmDuS&amp;amp;controls=0",
       "/images/szablony/1.webp",
       "/images/szablony/2.webp",
       "/images/szablony/3.webp",
       "/images/szablony/4.webp",
       "/images/szablony/5.webp",
-      "https://www.youtube.com/embed/p6aZ3A-bI8w?si=i2V8-v5qP-dkl3nL",
+      "https://www.youtube-nocookie.com/embed/p6aZ3A-bI8w?si=i2V8-v5qP-dkl3nL",
     ],
   },
   {
@@ -65,7 +65,7 @@ export const projects: ProjectProps[] = [
       "/images/szablony/6.webp",
       "/images/szablony/4.webp",
       "/images/szablony/8.webp",
-      "https://www.youtube.com/embed/IdWoyn_0f7M?si=EvosHacTT-itmDuS&amp;amp;controls=0",
+      "https://www.youtube-nocookie.com/embed/IdWoyn_0f7M?si=EvosHacTT-itmDuS&amp;amp;controls=0",
       "/images/szablony/7.webp",
     ],
   },
@@ -89,7 +89,7 @@ export const projects: ProjectProps[] = [
     assets: [
       "/images/historie_rodzinne/1.webp",
       "/images/historie_rodzinne/3.webp",
-      "https://www.youtube.com/embed/cMMkpDd9gBw?si=rhxpvBa_c5k8Wts7&amp;amp;controls=0",
+      "https://www.youtube-nocookie.com/embed/cMMkpDd9gBw?si=rhxpvBa_c5k8Wts7&amp;amp;controls=0",
       "/images/historie_rodzinne/2.webp",
     ],
     tags: [
@@ -173,9 +173,9 @@ export const projects: ProjectProps[] = [
     date: "2022",
     assets: [
       "/images/starszysyny/2.webp",
-      "https://www.youtube.com/embed/mV48BrIWMV0?si=647G-BpwORHj1BCi",
-      "https://www.youtube.com/embed/yNHWXxynUvs?si=CzwmKeGxdf3WiGVe",
-      "https://www.youtube.com/embed/eSEA0T1byN0?si=ZdCw11WU-JnKKoE_",
+      "https://www.youtube-nocookie.com/embed/mV48BrIWMV0?si=647G-BpwORHj1BCi",
+      "https://www.youtube-nocookie.com/embed/yNHWXxynUvs?si=CzwmKeGxdf3WiGVe",
+      "https://www.youtube-nocookie.com/embed/eSEA0T1byN0?si=ZdCw11WU-JnKKoE_",
     ],
     tags: [ProjectType.Music, ProjectType.Graphics],
   },
@@ -285,9 +285,9 @@ export const projects: ProjectProps[] = [
     date: "2010-2025",
     assets: [
       "/images/garbate_lemury/5.webp",
-      "https://www.youtube.com/embed/1_OhXSdOF8M?si=0mTSbqcD0KdNd6KT",
+      "https://www.youtube-nocookie.com/embed/1_OhXSdOF8M?si=0mTSbqcD0KdNd6KT",
       "/images/garbate_lemury/1.webp",
-      "https://www.youtube.com/embed/pQSvhxqT9i4?si=NOUgw67O6_UaUqt2",
+      "https://www.youtube-nocookie.com/embed/pQSvhxqT9i4?si=NOUgw67O6_UaUqt2",
       "/images/garbate_lemury/2.webp",
       "/images/garbate_lemury/3.webp",
       "/images/garbate_lemury/4.webp",
