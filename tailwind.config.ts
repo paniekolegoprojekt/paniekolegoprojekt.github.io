@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-
 import typographyPlugin from "./generate-typography";
 
 const config: Config = {
@@ -15,9 +14,6 @@ const config: Config = {
     extend: {
       animation: {
         fadeIn: "fadeIn 0.75s",
-        fadeInSlow: "fadeIn 1.0s ease-out",
-        slideIn: "slideIn 0.75s",
-        slideOut: "slideOut 0.75s",
         slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         scaleIn: "scaleIn 60000ms forwards",
@@ -35,23 +31,10 @@ const config: Config = {
           "0%": { opacity: "0" },
           "100%": { opacity: "100" },
         },
-        slideIn: {
-          "0%": { left: "100%" },
-          "100%": { left: "0%" },
-        },
-        slideOut: {
-          "0%": { left: "0" },
-          "100%": { left: "100%" },
-        },
         scaleIn: {
           "0%": { transform: "scale(1.0)" },
           "100%": { transform: "scale(1.15)" },
         },
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
         "ui-primary-blue": "#3B4D81",

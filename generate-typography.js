@@ -12,27 +12,14 @@ const generateTypography = ({ addComponents }) => {
       ["font-weight"]: "600",
       ["font-size"]: `16px`,
     },
-    ".label": {
-      ["font-family"]: "Montserrat",
-      ["font-size"]: `18px`,
-    },
     ".label-l": {
       ["font-family"]: "Montserrat",
       ["font-size"]: `20px`,
-    },
-    ".label-3xl": {
-      ["font-family"]: "Montserrat",
-      ["font-size"]: `32px`,
     },
     ".title-3xl": {
       ["font-family"]: "Montserrat",
       ["font-weight"]: "700",
       ["font-size"]: "64px",
-    },
-    ".title-2xl": {
-      ["font-family"]: "Montserrat",
-      ["font-weight"]: "700",
-      ["font-size"]: "48px",
     },
     ".title-xl": {
       ["font-family"]: "Montserrat",
@@ -44,19 +31,16 @@ const generateTypography = ({ addComponents }) => {
       ["font-weight"]: "700",
       ["font-size"]: "32px",
     },
-
     ".title-m": {
       ["font-family"]: "Montserrat",
       ["font-weight"]: "700",
       ["font-size"]: "24px",
     },
-
     ".title": {
       ["font-family"]: "Montserrat",
       ["font-weight"]: "700",
       ["font-size"]: "18px",
     },
-
     ".title-s": {
       ["font-family"]: "Montserrat",
       ["font-weight"]: "700",
