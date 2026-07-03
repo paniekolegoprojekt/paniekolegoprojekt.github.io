@@ -20,7 +20,7 @@ export const Hero = () => (
       <div className="sticky h-36 xl:h-fit xl:top-4 top-8 flex w-full justify-between px-6 py-4">
         <img
           src="shared/logo.svg"
-          fetchpriority="high"
+          fetchPriority="high"
           loading="eager"
           alt="logo"
           width={200}
