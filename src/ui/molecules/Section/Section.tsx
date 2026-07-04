@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Text } from "@/ui/atoms";
+import { Text } from "atoms";
 import { Accordion } from "@radix-ui/react-accordion";
 import parse from "html-react-parser";
 import { twMerge } from "tailwind-merge";
@@ -26,9 +26,7 @@ export const Section = ({
   const BgImage = ({ url }: { url: string }) =>
     loaded && (
       <img
-        className={twMerge(
-          "w-full grayscale ease-in-out transition-all  animate-scaleIn",
-        )}
+        className="w-full grayscale ease-in-out transition-all  animate-scaleIn"
         src={url}
         alt={title}
         width="100"
@@ -53,11 +51,7 @@ export const Section = ({
     >
       <div className="grid gap-4 h-fit col-span-12 xl:col-span-6">
         <div className="flex items-center gap-4 xl:gap-0">
-          <div
-            className={twMerge(
-              "aspect-square w-[100px] flex relative xl:hidden overflow-hidden",
-            )}
-          >
+          <div className="aspect-square w-[100px] flex relative xl:hidden overflow-hidden">
             <span
               className="absolute w-full h-full opacity-80 z-10"
               style={{ backgroundColor: color }}

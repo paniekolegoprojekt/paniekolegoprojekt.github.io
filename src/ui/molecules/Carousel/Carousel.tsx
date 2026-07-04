@@ -54,3 +54,5 @@ export const Carousel = ({ children, className, style }: CarouselProps) => {
     <div className={className}>{children}</div>
   );
 };
+
+export default Carousel;

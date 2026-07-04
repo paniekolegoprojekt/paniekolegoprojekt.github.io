@@ -1,15 +1,12 @@
 import { LangSwitch } from "@/ui/molecules";
-import { twMerge } from "tailwind-merge";
 
 export const Hero = () => (
-  <div className="h-screen relative flex justify-center ease-in-out transition-all animate-fadeIn">
+  <div className="h-screen relative flex justify-center ease-in-out transition-all animate-fadeInFast">
     <div className="bg-white absolute bottom-0 w-full h-4 z-10" />
     <video
-      className={twMerge(
-        "absolute inset-0 w-full h-full object-cover block ease-in-out transition-all",
-      )}
+      className="absolute inset-0 w-full h-full object-cover block ease-in-out transition-all"
       poster="/shared/poster.webp"
-      src="shared/hero.webm"
+      src="shared/hero_old.webm"
       autoPlay
       controls={false}
       preload="auto"

@@ -1,11 +1,15 @@
-import React from "react";
+import React, { Suspense } from "react";
 import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
 } from "@radix-ui/react-accordion";
 import parse from "html-react-parser";
-import { Carousel, Media } from "@/ui/molecules";
+import { Media } from "@/ui/molecules";
+import { lazy } from "react";
+
+const Carousel = lazy(() => import("@/ui/molecules/Carousel/Carousel"));
+
 import ArrowDownCircleIcon from "@heroicons/react/16/solid/ArrowDownCircleIcon";
 import { Text } from "@/ui/atoms";
 import { twMerge } from "tailwind-merge";
@@ -23,9 +27,7 @@ export const Project = ({
 }: ProjectComponentProps) => (
   <AccordionItem key={name} className={className ?? ""} value={name}>
     <AccordionTrigger
-      className={twMerge(
-        "hover:bg-[--section-color] hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none items-center",
-      )}
+      className="hover:bg-[--section-color] hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none items-center"
       style={{ borderColor: color }}
     >
       <div className="flex gap-3 items-center">
@@ -54,21 +56,23 @@ export const Project = ({
         { "--carousel-bg": bgColor, borderColor: color } as React.CSSProperties
       }
     >
-      <Carousel
-        className={twMerge(
-          "w-full bg-[--carousel-bg] h-auto carousel-box aspect-square",
-          !bgColor && "bg-white",
-        )}
-      >
-        {assets?.map((url) => (
-          <div
-            key={url}
-            className="aspect-square h-fit media-box content-center"
-          >
-            <Media url={url} />
-          </div>
-        ))}
-      </Carousel>
+      <Suspense fallback={"...loading"}>
+        <Carousel
+          className={twMerge(
+            "w-full bg-[--carousel-bg] h-auto carousel-box aspect-square",
+            !bgColor && "bg-white",
+          )}
+        >
+          {assets?.map((url) => (
+            <div
+              className="aspect-square h-fit media-box content-center"
+              key={url}
+            >
+              <Media url={url} />
+            </div>
+          ))}
+        </Carousel>
+      </Suspense>
       <div className="p-4 xl:p-6 grid gap-2 xl:gap-4">
         <div className="grid gap-4">
           <Text text={`${name} / ${date}`} className="title-s uppercase" />

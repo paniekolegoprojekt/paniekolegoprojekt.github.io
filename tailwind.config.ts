@@ -14,6 +14,7 @@ const config: Config = {
     extend: {
       animation: {
         fadeIn: "fadeIn 0.75s",
+        fadeInFast: "fadeIn 0.25s",
         slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         scaleIn: "scaleIn 60000ms forwards",

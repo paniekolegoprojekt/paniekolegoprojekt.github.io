@@ -4,7 +4,7 @@ import { sections } from "../const/const";
 import { Section } from "@/ui/molecules";
 import ChevronRightIcon from "@heroicons/react/16/solid/ChevronRightIcon";
 import { useTranslation } from "react-i18next";
-import parse from "html-react-parser";
+import { AboutMeSection } from "@/ui/organisms/AboutMeSection/AboutMeSection";
 
 export const HomePage = () => {
   const { t } = useTranslation();
@@ -33,15 +33,7 @@ export const HomePage = () => {
               ))}
             </div>
           </div>
-          <div className="grid gap-6 max-xl:order-first">
-            <Text text={t("about_me_text")} className="title-m xl:title-xl" />
-            <div className="paragraph-m text-justify">
-              <p className="">{parse(t("about_me.1"))}</p>
-              <p className="mt-4">{parse(t("about_me.2"))}</p>
-              <p className="mt-4">{parse(t("about_me.3"))}</p>
-              <p className="mt-4">{parse(t("about_me.4"))}</p>
-            </div>
-          </div>
+          <AboutMeSection />
         </div>
         {sections?.map((section, index) => (
           <Section key={section.title} section={section} index={index} />
