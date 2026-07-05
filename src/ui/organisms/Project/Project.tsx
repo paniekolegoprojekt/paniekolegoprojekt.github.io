@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import {
   AccordionItem,
   AccordionTrigger,
@@ -15,6 +15,7 @@ import { Text } from "@/ui/atoms";
 import { twMerge } from "tailwind-merge";
 import { t } from "i18next";
 import { ProjectComponentProps } from "./types";
+import { SuspenseLoader } from "@/ui/molecules/SuspenseLoader/SuspenseLoader";
 
 export const Project = ({
   name,
@@ -56,7 +57,7 @@ export const Project = ({
         { "--carousel-bg": bgColor, borderColor: color } as React.CSSProperties
       }
     >
-      <Suspense fallback={"...loading"}>
+      <SuspenseLoader>
         <Carousel
           className={twMerge(
             "w-full bg-[--carousel-bg] h-auto carousel-box aspect-square",
@@ -72,7 +73,7 @@ export const Project = ({
             </div>
           ))}
         </Carousel>
-      </Suspense>
+      </SuspenseLoader>
       <div className="p-4 xl:p-6 grid gap-2 xl:gap-4">
         <div className="grid gap-4">
           <Text text={`${name} / ${date}`} className="title-s uppercase" />

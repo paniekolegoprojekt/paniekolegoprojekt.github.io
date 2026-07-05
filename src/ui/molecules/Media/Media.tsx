@@ -1,8 +1,8 @@
 import { VideoPlayer } from "atoms";
 import { MediaProps } from "./types";
 import { twMerge } from "tailwind-merge";
-import ArrowPathIcon from "@heroicons/react/16/solid/ArrowPathIcon";
 import { useImage } from "@/hooks/useImage";
+import { Loader } from "@/ui/atoms/Loader/Loader";
 
 export const Media = ({ url, className }: MediaProps) => {
   const loaded = useImage(url);
@@ -25,11 +25,7 @@ export const Media = ({ url, className }: MediaProps) => {
             height="900"
           />
         )}
-        {!loaded && !isVideo && (
-          <div className="flex justify-center content-center w-full h-auto aspect-square items-center">
-            <ArrowPathIcon className="animate-spin h-8 w-8 text-ui-primary-grey" />
-          </div>
-        )}
+        {!loaded && !isVideo && <Loader />}
       </div>
     </div>
   );
