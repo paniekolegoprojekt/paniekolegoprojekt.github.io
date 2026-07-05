@@ -12,7 +12,9 @@ export const Hero = () => (
       preload="auto"
       muted
       loop
-    />
+    >
+      <track kind="captions" srcLang="en" label="hero" />
+    </video>
     <div className="xl:w-[1200px] w-full grid ml-auto mr-auto">
       <div className="sticky h-36 xl:h-fit xl:top-4 top-8 flex w-full justify-between px-6 py-4">
         <img
