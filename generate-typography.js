@@ -46,31 +46,26 @@ const generateTypography = ({ addComponents }) => {
       ["font-weight"]: "700",
       ["font-size"]: "16px",
     },
-
     ".title-xs": {
       ["font-family"]: "Montserrat",
       ["font-weight"]: "700",
       ["font-size"]: "14px",
     },
-
     ".title-xxs": {
       ["font-family"]: "Montserrat",
       ["font-weight"]: "700",
       ["font-size"]: "12px",
     },
-
     ".paragraph-xl": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "24px",
       ["font-weight"]: "450",
     },
-
     ".paragraph-l": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "18px",
       ["font-weight"]: "450",
     },
-
     ".paragraph-m": {
       ["font-family"]: "Montserrat",
       ["font-size"]: "16px",

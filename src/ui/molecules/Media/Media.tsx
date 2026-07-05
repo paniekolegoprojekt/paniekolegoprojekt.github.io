@@ -1,8 +1,7 @@
-import { VideoPlayer } from "atoms";
+import { VideoPlayer, Loader } from "atoms";
 import { MediaProps } from "./types";
 import { twMerge } from "tailwind-merge";
 import { useImage } from "@/hooks/useImage";
-import { Loader } from "@/ui/atoms/Loader/Loader";
 
 export const Media = ({ url, className }: MediaProps) => {
   const loaded = useImage(url);
@@ -21,8 +20,8 @@ export const Media = ({ url, className }: MediaProps) => {
             )}
             src={url}
             alt={url}
-            width="900"
-            height="900"
+            width="600"
+            height="600"
           />
         )}
         {!loaded && !isVideo && <Loader />}
@@ -30,3 +29,5 @@ export const Media = ({ url, className }: MediaProps) => {
     </div>
   );
 };
+
+export default Media;

@@ -1,4 +1,4 @@
-import { LangSwitch } from "@/ui/molecules";
+import { LangSwitch } from "molecules";
 
 export const Hero = () => (
   <div className="h-screen relative flex justify-center ease-in-out transition-all">

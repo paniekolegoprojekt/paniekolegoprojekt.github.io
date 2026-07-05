@@ -1,7 +1,7 @@
-import { Text } from "@/ui/atoms";
+import { Text } from "atoms";
+import { Section } from "molecules";
 import { Hero } from "@/ui/organisms";
 import { sections } from "../const/const";
-import { Section } from "@/ui/molecules";
 import ChevronRightIcon from "@heroicons/react/16/solid/ChevronRightIcon";
 import { useTranslation } from "react-i18next";
 import { AboutMeSection } from "@/ui/organisms/AboutMeSection/AboutMeSection";

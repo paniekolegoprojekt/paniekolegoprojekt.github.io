@@ -1,6 +1,6 @@
 import { PropsWithChildren, Suspense } from "react";
-import { Loader } from "@/ui/atoms/Loader/Loader";
+import { Loader } from "atoms";
 
-export const SuspenseLoader = ({ children }: PropsWithChildren) => {
-  return <Suspense fallback={<Loader />}>{children}</Suspense>;
-};
+export const SuspenseLoader = ({ children }: PropsWithChildren) => (
+  <Suspense fallback={<Loader />}>{children}</Suspense>
+);

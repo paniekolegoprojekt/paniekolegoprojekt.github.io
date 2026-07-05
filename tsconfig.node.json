@@ -7,17 +7,7 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noEmit": true,
-    "paths": {
-      "@": ["./src"],
-      "@/*": ["./src/*"],
-      "atoms": ["./src/ui/atoms"],
-      "$ui/*": ["./src/ui/*"],
-      "@/molecules": ["./src/ui/molecules"],
-      "@/organisms": ["./src/ui/organisms"],
-      "@atoms": ["./src/ui/components/atoms/index.ts"],
-      "@atoms/*": ["./src/ui/components/atoms"]
-    }
+    "noEmit": true
   },
   "include": ["vite.config.ts"]
 }

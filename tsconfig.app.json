@@ -26,6 +26,8 @@
       "@": ["./src"],
       "@/*": ["./src/*"],
       "atoms": ["./src/ui/atoms"],
+      "molecules": ["./src/ui/molecules"],
+      "organisms": ["./src/ui/organisms"],
       "$ui/*": ["./src/ui/*"]
     }
   },

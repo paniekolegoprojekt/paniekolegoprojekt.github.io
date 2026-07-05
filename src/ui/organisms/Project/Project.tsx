@@ -1,21 +1,18 @@
-import React from "react";
+import React, { lazy } from "react";
+const Carousel = lazy(() => import("@/ui/molecules/Carousel/Carousel"));
+const Media = lazy(() => import("@/ui/molecules/Media/Media"));
 import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
 } from "@radix-ui/react-accordion";
 import parse from "html-react-parser";
-import { Media } from "@/ui/molecules";
-import { lazy } from "react";
-
-const Carousel = lazy(() => import("@/ui/molecules/Carousel/Carousel"));
-
 import ArrowDownCircleIcon from "@heroicons/react/16/solid/ArrowDownCircleIcon";
-import { Text } from "@/ui/atoms";
+import { Text } from "atoms";
 import { twMerge } from "tailwind-merge";
 import { t } from "i18next";
 import { ProjectComponentProps } from "./types";
-import { SuspenseLoader } from "@/ui/molecules/SuspenseLoader/SuspenseLoader";
+import { SuspenseLoader } from "molecules";
 
 export const Project = ({
   name,
@@ -69,7 +66,9 @@ export const Project = ({
               className="aspect-square h-fit media-box content-center"
               key={url}
             >
-              <Media url={url} />
+              <SuspenseLoader>
+                <Media url={url} />
+              </SuspenseLoader>
             </div>
           ))}
         </Carousel>
