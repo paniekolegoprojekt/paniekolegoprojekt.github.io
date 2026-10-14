@@ -35,7 +35,7 @@ export const Project = ({
         />
         <Text
           text={String(tags?.[0])}
-          className="uppercase hidden xl:block label-s xl:label-m transition-all ease-in-out text-[--section-color]"
+          className="uppercase hidden xl:block label-s xl:label-m transition-all group-data-[state=open]:text-white ease-in-out text-[--section-color] xl:group-hover:text-white"
         />
       </div>
       <div className="flex gap-3">

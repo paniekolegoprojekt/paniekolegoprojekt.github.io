@@ -23,3 +23,27 @@ a {
     height: 10rem;
   }
 }
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fafafa #000;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
