@@ -10,7 +10,7 @@ export const HomePage = () => {
   const { t } = useTranslation();
 
   return (
-    <main className="bg-ui-polar lg:gap-4 gap-0">
+    <main className="bg-ui-polar lg:gap-4 gap-0 transition-all animate-fadeIn">
       <Hero />
       <div className="w-full my-6 xl:w-[1200px] grid ml-auto mr-auto xl:my-16 xl:px-0 px-4">
         <div className="grid grid-cols-1 xl:grid-cols-2 w-full gap-8 xl:gap-16 h-fit mb-8">
@@ -21,7 +21,7 @@ export const HomePage = () => {
                 <a
                   key={title}
                   className="rounded-md w-full text-white px-2 py-1 xl:px-4 xl:py-3 justify-between flex lg:hover:ml-4 ml-0 transition-all ease-in-out"
-                  style={{ backgroundColor: color }}
+                  style={{ border: `2px solid ${color}`, color }}
                   href={`#${title}`}
                 >
                   <Text

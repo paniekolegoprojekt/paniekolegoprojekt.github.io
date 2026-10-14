@@ -25,17 +25,17 @@ export const Project = ({
 }: ProjectComponentProps) => (
   <AccordionItem key={name} className={className ?? ""} value={name}>
     <AccordionTrigger
-      className="hover:bg-[--section-color] hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none items-center"
+      className="xl:hover:bg-[--section-color] xl:hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border-2 w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none items-center"
       style={{ borderColor: color }}
     >
       <div className="flex gap-3 items-center">
         <Text
           text={name}
-          className="title-xs xl:title-s uppercase group-data-[state=open]:text-white text-[--section-color] group-hover:text-white transition-all ease-in-out"
+          className="title-xs xl:title-s uppercase group-data-[state=open]:text-white text-[--section-color] xl:group-hover:text-white transition-all ease-in-out"
         />
         <Text
           text={String(tags?.[0])}
-          className="uppercase hidden xL:block label-s xl:label-m transition-all ease-in-out"
+          className="uppercase hidden xl:block label-s xl:label-m transition-all ease-in-out"
         />
       </div>
       <div className="flex gap-3">
@@ -73,9 +73,9 @@ export const Project = ({
           ))}
         </Carousel>
       </SuspenseLoader>
-      <div className="p-4 xl:p-6 grid gap-2 xl:gap-4">
+      <div className="p-4 xl:p-6 grid xl:gap-4">
         <div className="grid gap-4">
-          <Text text={`${name} / ${date}`} className="title-s uppercase" />
+          <Text text={`${name} / ${date}`} className="title-m uppercase" />
           <div className="xl:paragraph-m paragraph-s text-ui-dark">
             {parse(t(name))}
           </div>
@@ -83,8 +83,8 @@ export const Project = ({
             {tags?.map((tag) => (
               <Text
                 key={tag}
-                className="lowercase opacity-50 paragraph-s xl:paragraph-m"
-                text={`#${tag}`}
+                className="uppercase opacity-50 paragraph-xs xl:paragraph-s"
+                text={`${tag}`}
               />
             ))}
           </div>

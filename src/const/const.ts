@@ -62,11 +62,10 @@ export const projects: ProjectProps[] = [
     date: "2025",
     tags: [ProjectType.Graffiti, ProjectType.Web, "seria murali"],
     assets: [
-      "/images/szablony/6.webp",
-      "/images/szablony/4.webp",
-      "/images/szablony/8.webp",
+      "/images/szablony/10.png",
+      "/images/szablony/11.png",
+      "/images/szablony/12.png",
       "https://www.youtube-nocookie.com/embed/IdWoyn_0f7M?si=EvosHacTT-itmDuS&amp;amp;controls=0",
-      "/images/szablony/7.webp",
     ],
   },
   {
