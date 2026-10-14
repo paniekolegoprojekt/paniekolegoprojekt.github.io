@@ -13,7 +13,7 @@ export const HomePage = () => {
     <main className="bg-ui-polar lg:gap-4 gap-0 transition-all animate-fadeIn">
       <Hero />
       <div className="w-full my-6 xl:w-[1200px] grid ml-auto mr-auto xl:my-16 xl:px-0 px-4">
-        <div className="grid grid-cols-1 xl:grid-cols-2 w-full gap-8 xl:gap-16 h-fit mb-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 w-full gap-8 xl:gap-16 h-fit mb-4">
           <div className="grid gap-2 xl:gap-6 h-fit order-first ">
             <Text text="Portfolio" className="title-m xl:title-xl" />
             <div className="grid gap-2 xl:gap-4">
@@ -41,7 +41,7 @@ export const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-4 xl:gap-16 h-fit xl:my-16 my-4">
           <div className="grid gap-3">
             <Text className="title-l" text={t("contact")} />
-            <Text className="label-l" text={t("contact_text")} />
+            <Text className="paragraph-m" text={t("contact_text")} />
             <Text
               className="paragraph-s xl:paragraph-xl uppercase"
               text="erykrozdolski@gmail.com"

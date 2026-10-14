@@ -25,17 +25,17 @@ export const Project = ({
 }: ProjectComponentProps) => (
   <AccordionItem key={name} className={className ?? ""} value={name}>
     <AccordionTrigger
-      className="xl:hover:bg-[--section-color] xl:hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border-2 w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none items-center"
       style={{ borderColor: color }}
+      className="xl:hover:bg-[--section-color] xl:hover:text-white ease-in-out transition-all group flex p-3 xl:px-3 xl:py-4 rounded-md border-2 w-full justify-between data-[state=open]:bg-[--section-color] data-[state=open]:text-white data-[state=open]:rounded-b-none items-center"
     >
       <div className="flex gap-3 items-center">
         <Text
           text={name}
-          className="title-xs xl:title-s uppercase group-data-[state=open]:text-white text-[--section-color] xl:group-hover:text-white transition-all ease-in-out"
+          className="title-xs xl:title-s uppercase group-data-[state=open]:text-white text-[#333] xl:group-hover:text-white transition-all ease-in-out"
         />
         <Text
           text={String(tags?.[0])}
-          className="uppercase hidden xl:block label-s xl:label-m transition-all ease-in-out"
+          className="uppercase hidden xl:block label-s xl:label-m transition-all ease-in-out text-[--section-color]"
         />
       </div>
       <div className="flex gap-3">

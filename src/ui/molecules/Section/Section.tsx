@@ -32,16 +32,18 @@ export const Section = ({
   return (
     <div
       id={title}
-      className="grid grid-cols-12 gap-4 xl:gap-16 h-fit my-8 xl:my-16 py-0 xl:py-8"
+      className="grid grid-cols-12 gap-4 xl:gap-16 h-fit my-8 xl:my-16 py-0 xl:py-8 pt-4"
       style={{ "--section-color": color } as React.CSSProperties}
     >
       <div className="grid gap-4 h-fit col-span-12 xl:col-span-6">
         <div className="flex items-center gap-4 xl:gap-0">
           <Text
             text={title}
-            className="title-l xl:title-3xl uppercase leading-none mb-4"
+            className="title-l xl:title-3xl uppercase leading-none xl:mb-4 mb-0 "
           />
         </div>
+        <span className="w-full bg-[--section-color] h-1" />
+
         <Text
           text={parse(t(title))}
           className="paragraph-m xxl:paragraph-l text-justify"
