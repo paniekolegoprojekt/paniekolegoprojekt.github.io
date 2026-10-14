@@ -37,7 +37,10 @@ export const Section = ({
     >
       <div className="grid gap-4 h-fit col-span-12 xl:col-span-6">
         <div className="flex items-center gap-4 xl:gap-0">
-          <Text text={title} className="title-l xl:title-3xl uppercase" />
+          <Text
+            text={title}
+            className="title-l xl:title-3xl uppercase leading-none mb-4"
+          />
         </div>
         <Text
           text={parse(t(title))}

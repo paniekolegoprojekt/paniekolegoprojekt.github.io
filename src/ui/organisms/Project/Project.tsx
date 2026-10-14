@@ -75,7 +75,10 @@ export const Project = ({
       </SuspenseLoader>
       <div className="p-4 xl:p-6 grid xl:gap-4">
         <div className="grid gap-4">
-          <Text text={`${name} / ${date}`} className="title-m uppercase" />
+          <Text
+            text={`${name} / ${date}`}
+            className="title-m uppercase leading-none"
+          />
           <div className="xl:paragraph-m paragraph-s text-ui-dark">
             {parse(t(name))}
           </div>

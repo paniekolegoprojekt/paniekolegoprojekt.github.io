@@ -2,7 +2,7 @@ import { LangSwitch } from "molecules";
 
 export const Hero = () => (
   <div className="h-[97vh] relative flex justify-center ease-in-out transition-all">
-    <div className="bg-white absolute bottom-0 w-full h-4 z-10" />
+    <div className="bg-white absolute -bottom-2 w-full h-6 z-10" />
     <video
       className="absolute inset-0 w-full h-full object-cover block ease-in-out transition-all pointer-events-none"
       poster="/shared/poster.webp"
