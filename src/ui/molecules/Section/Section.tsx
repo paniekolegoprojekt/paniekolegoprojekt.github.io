@@ -32,7 +32,7 @@ export const Section = ({
   return (
     <div
       id={title}
-      className="grid grid-cols-12 gap-4 xl:gap-16 h-fit my-8 xl:my-16 py-0 xl:py-8 pt-4"
+      className="grid grid-cols-12 gap-4 xl:gap-16 h-fit my-8 xl:my-16 py-0 xl:py-16 pt-4"
       style={{ "--section-color": color } as React.CSSProperties}
     >
       <div className="grid gap-4 h-fit col-span-12 xl:col-span-6">
@@ -46,7 +46,7 @@ export const Section = ({
 
         <Text
           text={parse(t(title))}
-          className="paragraph-m xxl:paragraph-l text-justify"
+          className="paragraph-m xl:paragraph-l text-justify"
         />
         <div className="xl:hidden block">
           <Accordion className="grid gap-2 xl:gap-4" type="multiple">

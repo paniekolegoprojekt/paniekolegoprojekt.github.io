@@ -15,7 +15,6 @@ export const HomePage = () => {
       <div className="w-full my-6 xl:w-[1200px] grid ml-auto mr-auto xl:my-16 xl:px-0 px-4">
         <div className="grid grid-cols-1 xl:grid-cols-2 w-full gap-8 xl:gap-16 h-fit mb-4">
           <div className="grid gap-2 xl:gap-6 h-fit order-first ">
-            <Text text="Portfolio" className="title-m xl:title-xl" />
             <div className="grid gap-2 xl:gap-4">
               {sections?.map(({ title, color }) => (
                 <a

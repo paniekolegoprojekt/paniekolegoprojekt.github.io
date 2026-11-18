@@ -48,7 +48,7 @@ export const Project = ({
     </AccordionTrigger>
 
     <AccordionContent
-      className="bg-ui-light-grey border data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown overflow-hidden"
+      className="bg-ui-light-grey border-2 data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown overflow-hidden"
       id={`${name}-content`}
       style={
         { "--carousel-bg": bgColor, borderColor: color } as React.CSSProperties
@@ -75,10 +75,13 @@ export const Project = ({
       </SuspenseLoader>
       <div className="p-4 xl:p-6 grid xl:gap-4">
         <div className="grid gap-4">
-          <Text
-            text={`${name} / ${date}`}
-            className="title-m uppercase leading-none"
-          />
+          <div className="inline-flex gap-2">
+            <Text text={`${name}`} className="title-m uppercase leading-none" />
+            <Text
+              text={`/ ${date}`}
+              className="title-m uppercase leading-none font-normal"
+            />
+          </div>
           <div className="xl:paragraph-m paragraph-s text-ui-dark">
             {parse(t(name))}
           </div>
@@ -87,7 +90,8 @@ export const Project = ({
               <Text
                 key={tag}
                 className="uppercase opacity-50 paragraph-xs xl:paragraph-s"
-                text={`${tag}`}
+                style={{ color }}
+                text={`/ ${tag}`}
               />
             ))}
           </div>

@@ -29,7 +29,7 @@ export const Carousel = ({ children, className, style }: CarouselProps) => {
       <ArrowBtn
         onClick={onPrevButtonClick}
         disabled={prevBtnDisabled}
-        className="bg-[linear-gradient(to_left,rgba(255,0,0,0),rgba(0,0,0,0.25))]"
+        className="bg-[linear-gradient(to_left,rgba(255,0,0,0),rgba(0,0,0,0.125))]"
       >
         <ArrowLeftCircleIcon
           className={twMerge("h-8", "fill-[--section-color]")}
@@ -43,7 +43,7 @@ export const Carousel = ({ children, className, style }: CarouselProps) => {
       <ArrowBtn
         onClick={onNextButtonClick}
         disabled={nextBtnDisabled}
-        className="right-0 bg-[linear-gradient(to_right,rgba(255,0,0,0),rgba(0,0,0,0.25))]"
+        className="right-0 bg-[linear-gradient(to_right,rgba(255,0,0,0),rgba(0,0,0,0.125))]"
       >
         <ArrowRightCircleIcon
           className={twMerge("h-8", "fill-[--section-color]")}
